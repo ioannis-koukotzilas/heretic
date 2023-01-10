@@ -1,0 +1,306 @@
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Box sizing
+--------------------------------------------- */
+
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+
+html {
+  font-size: 18px;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: var(--text-base);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+h1 {
+  font-family: var(--font-family-condensed);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xlarge);
+  line-height: var(--line-height-solid);
+}
+
+h2 {
+  font-family: var(--font-family-condensed);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-large);
+}
+
+h3 {
+  font-family: var(--font-family-condensed);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-medium);
+  line-height: var(--line-height-title);
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 1.5rem;
+}
+
+address {
+  margin: 0 0 1.5rem;
+}
+
+mark,
+ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+/* Elements
+--------------------------------------------- */
+body {
+  min-height: 100vh;
+  background-color: #000;
+}
+
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5rem;
+}
+
+ul,
+ol {
+  margin: 0 0 1.5rem 3rem;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5rem;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin: 0 1.5rem 1.5rem;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: var(--max-width-fluid);
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: var(--max-width-fluid);
+}
+
+figure {
+  margin: 1rem 0;
+}
+
+table {
+  margin: 0 0 1.5rem;
+  width: 100%;
+}
+
+/* Links
+--------------------------------------------- */
+a {
+  display: inline-block;
+  color: var(--text-base);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--text-base);
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: var(--text-base);
+  outline: 0;
+}
+
+/* Forms
+--------------------------------------------- */
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  border: 1px solid;
+  border-radius: var(--border-radius-base);
+  background: var(--bg-accent);
+  color: var(--text-base);
+  line-height: var(--line-height-solid);
+  padding: 0.5rem 1rem;
+}
+
+button:hover,
+input[type='button']:hover,
+input[type='reset']:hover,
+input[type='submit']:hover {
+  border-color: #ccc #bbb #aaa;
+}
+
+button:active,
+button:focus,
+input[type='button']:active,
+input[type='button']:focus,
+input[type='reset']:active,
+input[type='reset']:focus,
+input[type='submit']:active,
+input[type='submit']:focus {
+  border-color: #aaa #bbb #bbb;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'],
+input[type='number'],
+input[type='tel'],
+input[type='range'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='time'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='color'],
+textarea {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='url']:focus,
+input[type='password']:focus,
+input[type='search']:focus,
+input[type='number']:focus,
+input[type='tel']:focus,
+input[type='range']:focus,
+input[type='date']:focus,
+input[type='month']:focus,
+input[type='week']:focus,
+input[type='time']:focus,
+input[type='datetime']:focus,
+input[type='datetime-local']:focus,
+input[type='color']:focus,
+textarea:focus {
+  color: #111;
+}
+
+select {
+  border: 1px solid var(--border-base);
+}
+
+textarea {
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex='-1']:focus {
+  outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Site
+--------------------------------------------------------------*/
+
+.site {
+  max-width: var(--max-width-base);
+  margin: 0 auto;
+}

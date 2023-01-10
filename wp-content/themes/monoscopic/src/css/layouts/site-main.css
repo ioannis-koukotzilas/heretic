@@ -1,0 +1,16 @@
+/*--------------------------------------------------------------
+# Site Main
+--------------------------------------------------------------*/
+
+.site-main:is(.page-default, .single-post, .single-film) {
+  background-color: var(--bg-base);
+}
+
+.site-main:is(.page-default, .single-post, .single-film) > .container {
+  max-width: var(--max-width-xxl);
+  margin: 0 auto;
+  padding: 4.5rem 20px;
+}
+
+
+

@@ -1,0 +1,51 @@
+/*--------------------------------------------------------------
+# Site Header
+--------------------------------------------------------------*/
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+
+.site-header::before {
+  content: '';
+  display: block;
+width: 100%;
+height: .1875rem;
+  background-image: linear-gradient(to right,#73D2F6,#08C 22%,#7FC400 36%,#FFD583 48%,#FFB21E 63%,#FF4D4D 76%,#503873);
+}
+
+.site-header > .container {
+  max-width: var(--max-width-xxl);
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 65px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: normal;
+  text-transform: lowercase;
+}
+
+.site-title a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trademark {
+  margin-top: 0.5rem;
+}
+
+.trademark svg {
+  display: block;
+  width: 1.25rem;
+  height: auto;
+}
