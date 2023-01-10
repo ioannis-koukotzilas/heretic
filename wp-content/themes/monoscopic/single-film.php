@@ -8,11 +8,17 @@
 
 			<?php get_template_part('template-parts/film/content-film-single'); ?>
 
-			<?php get_template_part('template-parts/film/film-info'); ?>
+			<div class="grid">
 
-			<?php get_template_part('template-parts/film/film-gallery'); ?>
+				<?php get_template_part('template-parts/film/film-synopsis'); ?>
 
-			
+				<?php get_template_part('template-parts/film/film-gallery'); ?>
+
+				<?php get_template_part('template-parts/film/film-info'); ?>
+
+				<?php get_template_part('template-parts/film/film-festivals'); ?>
+
+			</div>
 
 			<?php get_template_part('template-parts/film/related-production'); ?>
 
