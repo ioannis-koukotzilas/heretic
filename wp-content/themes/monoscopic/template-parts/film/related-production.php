@@ -35,7 +35,7 @@ $query = new WP_Query(array(
                                 <?php the_post_thumbnail('large')  ?>
                                 
                                     <?php monoscopic_production_terms(); ?>
-                                    <?php the_title('<h2 class="entry-title"><span>', '</span></h2>'); ?>
+                                    <?php the_title('<h3 class="entry-title">', '</h3>'); ?>
                                
                             </a>
                         </li>

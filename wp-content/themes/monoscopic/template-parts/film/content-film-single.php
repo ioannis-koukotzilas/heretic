@@ -52,9 +52,3 @@
 
 
 
-<div class="entry-content">
-	<div class="container">
-		<h2>Synopsis</h2>
-		<?php the_content(); ?>
-	</div>
-</div>
