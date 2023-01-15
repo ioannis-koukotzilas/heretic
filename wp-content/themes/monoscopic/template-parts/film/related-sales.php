@@ -9,7 +9,7 @@ $terms = wp_get_post_terms($post->ID, 'sales', array('fields' => 'slugs'));
 $query = new WP_Query(array(
     'post_type' => 'film',
     'post__not_in' => array(get_the_ID()),
-    'posts_per_page' => 6,
+    'posts_per_page' => 10,
     'tax_query' => array(
         array(
             'taxonomy' => 'sales',
@@ -25,19 +25,29 @@ $query = new WP_Query(array(
 
 <?php if ($query->have_posts()) : ?>
 
-    <section class="related-films sales">
+    <section class="related sales">
         <div class="container">
-            <ul>
+        <div class="section-eyebrow">More from</div>
+        <h2 class="section-title">Sales</h2>
+        <div class="swiper">
+            <ul class="films swiper-wrapper">
                 <?php while ($query->have_posts()) : $query->the_post(); ?>
-                    <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <li class="film swiper-slide">
                         <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
-                        <?php the_post_thumbnail('medium')  ?>
-                            <?php the_title('<div>', '</div>'); ?>
+                        <?php the_post_thumbnail('large')  ?>
                             <?php monoscopic_sales_terms(); ?>
+                            <?php the_title('<h3 class="entry-title">', '</h3>'); ?>
+                            
                         </a>
                     </li>
                 <?php endwhile; ?>
             </ul>
+
+            <div class="swiper-navigation">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                </div>
         </div>
     </section>
 

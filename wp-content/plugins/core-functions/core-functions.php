@@ -112,7 +112,7 @@ function register_cpt_film()
 		'public' => true,
 		'publicly_queryable' => true,
 		'show_in_rest' => false,
-		'has_archive' => 'projects',
+		'has_archive' => 'films',
 		'show_in_menu' => true,
 		'menu_position' => 3,
 		'show_in_nav_menus' => true,

@@ -1,8 +1,7 @@
 <?php $film_gallery_images = get_field('film_gallery'); ?>
 <?php if ($film_gallery_images) :  ?>
-    <div class="film-gallery">
+    <section class="entry-gallery">
         <div class="container">
-            <h2>Views</h2>
             <div class="column-wrap">
                 <?php foreach ($film_gallery_images as $film_gallery_image) : ?>
                     <a data-fslightbox="gallery" href="<?php echo esc_url($film_gallery_image['url']); ?>">
@@ -11,5 +10,5 @@
                 <?php endforeach; ?>
             </div>
         </div>
-    </div>
+    </section>
 <?php endif; ?>

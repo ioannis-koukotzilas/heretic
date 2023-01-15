@@ -1,10 +1,10 @@
 <?php if (get_field('film_info')) : ?>
 
-    <section class="film-info">
+    <section class="entry-info">
 
         <div class="container">
 
-            <h2 class="section-title"><?php esc_html_e('Info', 'monoscopic'); ?></h2>
+            <h4 class="section-title"><?php esc_html_e('Info', 'monoscopic'); ?></h4>
 
             <div class="section-content">
 

@@ -10,12 +10,12 @@ document.querySelectorAll(':is(.featured-video) button').forEach((button) =>
 );
 
 // Init swiper
-const filmsSlider = new Swiper('.related-films .swiper', {
+const filmsSlider = new Swiper('.related .swiper', {
   watchSlidesVisibility: true,
   preloadImages: false,
   lazy: false,
-  slidesPerView: 4,
-  spaceBetween: 0,
+  slidesPerView: 2,
+  spaceBetween: 20,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',

@@ -18,14 +18,13 @@
 		<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 
 		<?php if (get_field('film_subtitle')) : ?>
-			<h3 class="entry-subtitle"><?php the_field('film_subtitle'); ?></h3>
+			<h4 class="entry-subtitle"><?php the_field('film_subtitle'); ?></h4>
 		<?php endif; ?>
 
 	</div>
 </header>
 
-<?php $featured_video = get_field('featured_video'); ?>
-<?php if ($featured_video) : ?>
+<?php if (get_field('featured_video')) : ?>
 
 	<section class="entry-media">
 		<div class="container">

@@ -6,23 +6,31 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<?php get_template_part('template-parts/film/content-film-single'); ?>
+			<div class="container">
 
-			<div class="grid">
+				<?php get_template_part('template-parts/film/content-film-single'); ?>
 
-				<?php get_template_part('template-parts/film/film-synopsis'); ?>
+				
 
-				<?php get_template_part('template-parts/film/film-gallery'); ?>
+					<?php get_template_part('template-parts/film/film-synopsis'); ?>
 
-				<?php get_template_part('template-parts/film/film-info'); ?>
+					<?php get_template_part('template-parts/film/film-gallery'); ?>
 
-				<?php get_template_part('template-parts/film/film-festivals'); ?>
+					<div class="grid">
+
+					<?php get_template_part('template-parts/film/film-info'); ?>
+
+					<?php get_template_part('template-parts/film/film-festivals'); ?>
+
+					</div>
+
+				
+
+				<?php get_template_part('template-parts/film/related-production'); ?>
+
+				<?php get_template_part('template-parts/film/related-sales'); ?>
 
 			</div>
-
-			<?php get_template_part('template-parts/film/related-production'); ?>
-
-			<?php get_template_part('template-parts/film/related-sales'); ?>
 
 		</article>
 

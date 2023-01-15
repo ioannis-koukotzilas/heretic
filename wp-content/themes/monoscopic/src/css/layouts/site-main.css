@@ -12,5 +12,14 @@
   padding: 4.5rem 20px;
 }
 
+.section-eyebrow {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+  opacity: 0.5;
+}
 
-
+.section-title {
+  margin-top: 0;
+  text-transform: uppercase;
+}

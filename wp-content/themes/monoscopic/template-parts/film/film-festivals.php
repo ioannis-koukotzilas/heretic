@@ -1,10 +1,10 @@
 <?php if (get_field('film_festivals')) : ?>
 
-    <section class="film-festivals">
+    <section class="entry-festivals">
 
         <div class="container">
 
-            <h2 class="section-title"><?php esc_html_e('Festivals', 'monoscopic'); ?></h2>
+            <h4 class="section-title"><?php esc_html_e('Festivals', 'monoscopic'); ?></h4>
 
             <div class="section-content">
 

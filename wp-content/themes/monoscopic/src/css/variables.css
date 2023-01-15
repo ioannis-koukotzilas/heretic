@@ -5,8 +5,11 @@
 /* Root
 --------------------------------------------- */
 :root {
+  /* Weight range is: Thin 100, Light 300, Regular 400, Medium 500, Bold 700, Black 900 */
   --font-family-base: 'Roboto', sans-serif;
+  /* Weight range is: Light 300, Regular 400, Bold 700 */
   --font-family-condensed: 'Roboto Condensed', sans-serif;
+  /* Weight range is: Thin 100, ExtraLight 200, Light 300, Regular 400, Medium 500, SemiBold 600, Bold 700 */
   --font-family-mono: 'Roboto Mono', sans-serif;
   --font-family-identity: 'Brown', sans-serif;
   --font-family-icon-base: 'Material-Icons', sans-serif;
@@ -14,10 +17,18 @@
   
   --font-size-small: 14px;
   --font-size-base: 1rem;
-  --font-size-medium: 30px;
-  --font-size-large: 48px;
-  --font-size-xlarge: 96px;
-  
+  --font-size-medium: 1.25rem;
+  --font-size-large: 1.875rem;
+  --font-size-xlarge: 3rem;
+  --font-size-xxlarge: 4.5rem;
+
+  /* For multiplication at least one of the arguments must be a static num. */
+  --letter-spacing-small: calc(var(--font-size-small) * 0.05);
+  --letter-spacing-base: 0.05rem;
+  --letter-spacing-medium: calc(var(--font-size-medium) * 0.05);
+  --letter-spacing-large: calc(var(--font-size-large) * 0.05);
+  --letter-spacing-xlarge: calc(var(--font-size-xlarge) * 0.05);
+  --letter-spacing-xlarge: calc(var(--font-size-xxlarge) * 0.05);
 
   --font-size-icon-base: 1.25rem;
   --font-size-icon-medium: 1.563rem;
@@ -37,8 +48,8 @@
   --line-height-title: 1.25;
   --line-height-solid: 1;
 
-  --bg-base: #fff;
-  --bg-light: #e0e0e0;
+  --bg-base: #ffffff;
+  --bg-light: #f2f2f2;
   --bg-dark: #141414;
   --bg-accent: #ff6633;
 

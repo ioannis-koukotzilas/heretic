@@ -1,12 +1,16 @@
 <?php if (get_the_content()) : ?>
 
-    <section class="film-synopsis">
+    <section class="entry-synopsis">
 
         <div class="container">
 
-            <h2>Synopsis</h2>
+            <h2 class="section-title">Synopsis</h2>
 
-            <?php the_content(); ?>
+            <div class="entry-content">
+
+                <?php the_content(); ?>
+
+            </div>
 
         </div>
 

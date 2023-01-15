@@ -9,7 +9,7 @@ $terms = wp_get_post_terms($post->ID, 'production', array('fields' => 'slugs'));
 $query = new WP_Query(array(
     'post_type' => 'film',
     'post__not_in' => array(get_the_ID()),
-    'posts_per_page' => 6,
+    'posts_per_page' => 10,
     'tax_query' => array(
         array(
             'taxonomy' => 'production',
@@ -25,8 +25,10 @@ $query = new WP_Query(array(
 
 <?php if ($query->have_posts()) : ?>
 
-    <section class="related-films production">
+    <section class="related production">
         <div class="container">
+        <div class="section-eyebrow">More from</div>
+        <h2 class="section-title">Production</h2>
             <div class="swiper">
                 <ul class="films swiper-wrapper">
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
