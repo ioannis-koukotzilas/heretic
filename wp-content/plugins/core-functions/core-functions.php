@@ -180,9 +180,9 @@ function register_cpt_film_taxonomies()
 		'show_in_graphql' => false,
 		'rewrite' => ['slug' => 'production'],
 		'capabilities' => array(
-			'manage_terms' => '', // manage_categories
-			'edit_terms' => '', // manage_categories
-			'delete_terms' => '', // manage_categories
+			'manage_terms' => 'manage_categories', // manage_categories
+			'edit_terms' => 'manage_categories', // manage_categories
+			'delete_terms' => 'manage_categories', // manage_categories
 			'assign_terms' => 'edit_posts'
 		),
 	];

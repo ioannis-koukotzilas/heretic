@@ -1,0 +1,19 @@
+
+.page-default {
+    background-color: var(--bg-base);
+}
+
+.page-default > .container {
+  max-width: var(--max-width-medium);
+  margin: 0 auto;
+  padding: 4.5rem 20px;
+}
+
+.page-default .entry-title {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.page-default .entry-content {
+    letter-spacing: var(--letter-spacing-base);
+}

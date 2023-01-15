@@ -11,7 +11,7 @@
   --font-family-condensed: 'Roboto Condensed', sans-serif;
   /* Weight range is: Thin 100, ExtraLight 200, Light 300, Regular 400, Medium 500, SemiBold 600, Bold 700 */
   --font-family-mono: 'Roboto Mono', sans-serif;
-  --font-family-identity: 'Brown', sans-serif;
+  --font-family-brand: 'Brown', sans-serif;
   --font-family-icon-base: 'Material-Icons', sans-serif;
 
   
@@ -28,7 +28,7 @@
   --letter-spacing-medium: calc(var(--font-size-medium) * 0.05);
   --letter-spacing-large: calc(var(--font-size-large) * 0.05);
   --letter-spacing-xlarge: calc(var(--font-size-xlarge) * 0.05);
-  --letter-spacing-xlarge: calc(var(--font-size-xxlarge) * 0.05);
+  --letter-spacing-xxlarge: calc(var(--font-size-xxlarge) * -0.035);
 
   --font-size-icon-base: 1.25rem;
   --font-size-icon-medium: 1.563rem;

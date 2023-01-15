@@ -12,7 +12,8 @@
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  font-weight: bold;
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-medium);
 }
 
 :is(.main-nav) .menu > .menu-item {
@@ -20,8 +21,7 @@
 }
 
 :is(.main-nav) .menu > .menu-item > a {
-  padding: 0 1rem;
-  height: 65px;
+  padding: 1.5rem 1rem;
   display: flex;
   align-items: center;
 }
@@ -59,7 +59,7 @@
   text-decoration: underline;
   text-decoration-color: currentcolor;
   text-underline-offset: 0.25rem;
-  text-decoration-color: var(--text-accent);
+  /* text-decoration-color: var(--text-accent); */
 }
 
 .current-menu-item a {

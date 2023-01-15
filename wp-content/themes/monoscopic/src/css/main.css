@@ -47,6 +47,7 @@ h1 {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xxlarge);
   line-height: var(--line-height-solid);
+  letter-spacing: var(--letter-spacing-xxlarge);
 }
 
 h2 {

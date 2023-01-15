@@ -256,67 +256,14 @@
   text-align: center;
 }
 
-/* Films Loop
---------------------------------------------- */
-
-.films {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.films > .film a {
-  display: block;
-  background-color: var(--bg-dark);
-}
-
-.films > .film img {
-  object-fit: cover;
-  aspect-ratio: 16 / 9;
-  opacity: 0.75;
-  transition: opacity 0.4s linear;
-}
-
-.films > .film a:hover img {
-  opacity: 1;
-}
-
-.films > .film .entry-title {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 20px;
-  text-transform: uppercase;
-  line-height: var(--line-height-title);
-  font-size: var(--font-size-medium);
-  color: var(--text-light);
-}
-
-.films > .film .terms {
-  position: absolute;
-  top: 0;
-  left: 0;
-  list-style: none;
-  margin: 0;
-  padding: 20px;
-  /* font-family: var(--font-family-condensed); */
-  font-size: var(--font-size-small);
-  font-weight: var(--font-weight-medium);
-  color: var(--text-light);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.films > .film .terms li {
-  padding: 0.15rem 0.3rem;
-  background-color: rgba(0, 0, 0, 0.35);
-}
-
 /* Grid
 --------------------------------------------- */
 
 .grid {
+  background-color: var(--bg-base);
+}
+
+.grid > .container {
   max-width: var(--max-width-large);
   margin: 0 auto;
   display: grid;

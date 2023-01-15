@@ -81,6 +81,8 @@ function monoscopic_scripts()
 	wp_enqueue_style('page', get_template_directory_uri() . '/src/css/content/page.css', array(), '1.0.0');
 	wp_enqueue_style('post', get_template_directory_uri() . '/src/css/content/post.css', array(), '1.0.0');
 	wp_enqueue_style('film', get_template_directory_uri() . '/src/css/content/film.css', array(), '1.0.0');
+	wp_enqueue_style('film-archive', get_template_directory_uri() . '/src/css/content/film-archive.css', array(), '1.0.0');
+	wp_enqueue_style('films-list', get_template_directory_uri() . '/src/css/content/films-list.css', array(), '1.0.0');
 
 	// Scripts.
 	wp_enqueue_script('swiper', get_template_directory_uri() . '/src/js/swiper.js', array(), '1.0.0', true);
