@@ -6,11 +6,11 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: var(--bg-base);
+  background-color: rgb(var(--bg-white));
 }
 
 .site-header > .container {
-  max-width: var(--max-width-xxlarge);
+  max-width: var(--max-w-2xl);
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -21,11 +21,10 @@
 
 .site-title {
   margin: 0;
-  font-size: var(--font-size-large);
-  font-family: var(--font-family-brand);
-  font-weight: normal;
+  font-family: var(--font-brand);
+  font-size: var(--font-lg);
+  font-weight: var(--font-regular);
   text-transform: lowercase;
-  letter-spacing: 0;
 }
 
 .site-title a {

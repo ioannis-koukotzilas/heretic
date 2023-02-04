@@ -174,26 +174,27 @@
   position: relative;
   z-index: 10;
   cursor: pointer;
-  font-family: var(--font-family-icon-base);
+  font-family: var(--font-symbol);
   line-height: 1;
   margin: 20px;
-  background-color: var(--bg-dark);
+  background-color: rgba(var(--bg-dark), 0.5);
+  color: rgba(var(--color-light), 0.75);
   border-radius: 50%;
-  padding: 1rem;
-  color: var(--text-light);
+  padding: 0.75rem;
   font-size: var(--font-size-icon-large);
-  opacity: 0.75;
-  transition: opacity 0.2s ease-in-out;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  opacity: 1;
+  background-color: rgba(var(--bg-dark), 1);
+  color: rgba(var(--color-light), 1);
 }
 
 .swiper-button-prev.swiper-button-disabled,
 .swiper-button-next.swiper-button-disabled {
-  opacity: 0.35;
+  background-color: rgba(var(--bg-dark), 0.15);
+  color: rgba(var(--color-light), 0.15);
   cursor: auto;
   /* pointer-events: none; */
 }

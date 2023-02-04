@@ -13,29 +13,36 @@
 
 .films > .film a {
   display: block;
-  background-color: var(--bg-dark);
+  background-color: rgb(var(--bg-dark));
 }
 
 .films > .film img {
   object-fit: cover;
+  width: 100%;
   aspect-ratio: 16 / 9;
   opacity: 0.75;
-  transition: opacity 0.4s linear;
+  transition: opacity 0.2s;
 }
 
 .films > .film a:hover img {
   opacity: 1;
 }
 
-.films > .film .entry-title {
+.films > .film .title {
   position: absolute;
   bottom: 0;
   left: 0;
   margin: 20px;
   text-transform: uppercase;
-  line-height: var(--line-height-title);
-  font-size: var(--font-size-medium);
-  color: var(--text-light);
+  font-size: var(--font-lg);
+  line-height: var(--leading-none);
+  color: rgb(var(--color-light));
+}
+
+@media (min-width: 720px) {
+  .films > .film .title {
+    font-size: var(--font-xl);
+  }
 }
 
 .films > .film .terms {
@@ -46,15 +53,16 @@
   margin: 0;
   padding: 20px;
   /* font-family: var(--font-family-condensed); */
-  font-size: var(--font-size-small);
-  font-weight: var(--font-weight-medium);
-  color: var(--text-light);
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+  color: rgb(var(--color-light));
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
 .films > .film .terms li {
-  padding: 0.15rem 0.3rem;
-  background-color: rgba(0, 0, 0, 0.35);
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(var(--bg-dark), 0.35);
+  border-radius: var(--rounded);
 }

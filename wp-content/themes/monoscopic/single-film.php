@@ -4,37 +4,45 @@
 
 	<?php while (have_posts()) : the_post(); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article class="single-film">
 
+			<?php get_template_part('template-parts/single-film/single-film-header'); ?>
 
+			<?php get_template_part('template-parts/single-film/single-film-featured-media'); ?>
 
-			<?php get_template_part('template-parts/film/content-film-single'); ?>
+			<?php get_template_part('template-parts/single-film/single-film-logos'); ?>
 
+			<?php get_template_part('template-parts/single-film/single-film-synopsis'); ?>
 
+			<?php get_template_part('template-parts/single-film/single-film-gallery'); ?>
 
-			<?php get_template_part('template-parts/film/film-synopsis'); ?>
+			<?php get_template_part('template-parts/single-film/single-film-details'); ?>
 
-			<?php get_template_part('template-parts/film/film-gallery'); ?>
+			<?php if (has_term('', 'production') && has_term('', 'sales')) : ?>
 
-			<div class="grid">
+				<?php get_template_part('template-parts/single-film/single-film-featured-production'); ?>
 
-				<div class="container">
+				<?php get_template_part('template-parts/single-film/single-film-featured-sales'); ?>
 
-					<?php get_template_part('template-parts/film/film-info'); ?>
+			<?php elseif (has_term('', 'production')) : ?>
 
-					<?php get_template_part('template-parts/film/film-festivals'); ?>
+				<?php get_template_part('template-parts/single-film/single-film-featured-production'); ?>
 
-				</div>
+				<?php get_template_part('template-parts/single-film/single-film-featured-sales'); ?>
 
-			</div>
+			<?php elseif (has_term('', 'sales')) : ?>
 
+				<?php get_template_part('template-parts/single-film/single-film-featured-sales'); ?>
 
+				<?php get_template_part('template-parts/single-film/single-film-featured-production'); ?>
 
-			<?php get_template_part('template-parts/film/related-production'); ?>
+			<?php else : ?>
 
-			<?php get_template_part('template-parts/film/related-sales'); ?>
+				<?php get_template_part('template-parts/single-film/single-film-featured-production'); ?>
+				
+				<?php get_template_part('template-parts/single-film/single-film-featured-sales'); ?>
 
-
+			<?php endif ?>
 
 		</article>
 

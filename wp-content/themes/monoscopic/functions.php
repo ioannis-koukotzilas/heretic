@@ -76,6 +76,7 @@ function monoscopic_scripts()
 	// Components.
 	wp_enqueue_style('navigation', get_template_directory_uri() . '/src/css/components/navigation.css', array(), '1.0.0');
 	wp_enqueue_style('swiper', get_template_directory_uri() . '/src/css/components/swiper.css', array(), '8.4.5');
+	wp_enqueue_style('lightbox', get_template_directory_uri() . '/src/css/components/lightbox.css', array(), '8.4.5');
 
 	// Content.
 	wp_enqueue_style('page', get_template_directory_uri() . '/src/css/content/page.css', array(), '1.0.0');
@@ -103,3 +104,29 @@ require get_template_directory() . '/inc/template-tags.php';
 
 require get_template_directory() . '/inc/template-functions.php';
 
+/**
+ * Change Posts Per Page for Archives
+ */
+
+function monoscopic_archive_posts_per_page($query)
+{
+	if ($query->is_main_query() && !is_admin() && is_tax()) {
+		$query->set('posts_per_page', '8');
+	}
+}
+add_action('pre_get_posts', 'monoscopic_archive_posts_per_page');
+
+/**
+ * Modify the Archive title.
+ */
+
+function monoscopic_archive_title($title)
+{
+	if (is_post_type_archive()) {
+		$title = post_type_archive_title('', false);
+	} elseif (is_tax()) {
+		$title = single_term_title('', false);
+	}
+	return $title;
+}
+add_filter('get_the_archive_title', 'monoscopic_archive_title');

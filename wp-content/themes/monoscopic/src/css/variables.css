@@ -5,69 +5,68 @@
 /* Root
 --------------------------------------------- */
 :root {
-  /* Weight range is: Thin 100, Light 300, Regular 400, Medium 500, Bold 700, Black 900 */
-  --font-family-base: 'Roboto', sans-serif;
-  /* Weight range is: Light 300, Regular 400, Bold 700 */
-  --font-family-condensed: 'Roboto Condensed', sans-serif;
-  /* Weight range is: Thin 100, ExtraLight 200, Light 300, Regular 400, Medium 500, SemiBold 600, Bold 700 */
-  --font-family-mono: 'Roboto Mono', sans-serif;
-  --font-family-brand: 'Brown', sans-serif;
-  --font-family-icon-base: 'Material-Icons', sans-serif;
+  --font-sans: 'GT Pressura', sans-serif; /* Weight range is: Regular 400, Medium 500, Bold 700 */
+  --font-mono: 'GT Pressura Mono', sans-serif; /* Weight range is: Regular 400, Medium 500 */
+  --font-brand: 'Brown', sans-serif;
+  --font-symbol: 'Material-Icons', sans-serif;
 
-  
-  --font-size-small: 14px;
-  --font-size-base: 1rem;
-  --font-size-medium: 1.25rem;
-  --font-size-large: 1.875rem;
-  --font-size-xlarge: 3rem;
-  --font-size-xxlarge: 4.5rem;
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 1.875rem;
+  --font-4xl: 2.25rem;
+  --font-5xl: 3rem;
+  --font-6xl: 3.75rem;
+  --font-7xl: 4.5rem;
 
-  /* For multiplication at least one of the arguments must be a static num. */
-  --letter-spacing-small: calc(var(--font-size-small) * 0.05);
-  --letter-spacing-base: 0.05rem;
-  --letter-spacing-medium: calc(var(--font-size-medium) * 0.05);
-  --letter-spacing-large: calc(var(--font-size-large) * 0.05);
-  --letter-spacing-xlarge: calc(var(--font-size-xlarge) * 0.05);
-  --letter-spacing-xxlarge: calc(var(--font-size-xxlarge) * -0.035);
 
   --font-size-icon-base: 1.25rem;
   --font-size-icon-medium: 1.563rem;
   --font-size-icon-large: 1.953rem;
   --font-size-icon-xlarge: 2.441rem;
 
-  --font-weight-thin: 100;
-  --font-weight-extra-light: 200;
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 500;
-  --font-weight-bold: 700;
-  --font-weight-black: 900;
+  --font-thin: 100;
+  --font-extralight: 200;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
 
-  --line-height-base: 1.5;
-  --line-height-title: 1.25;
-  --line-height-solid: 1;
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-base: 1.5;
 
-  --bg-base: #ffffff;
-  --bg-light: #f2f2f2;
-  --bg-dark: #141414;
-  --bg-accent: #ff6633;
+  --bg-white: 255, 255, 255; /* #ffffff */
+  --bg-black: 0, 0, 0; /* #000000 */
+  --bg-light: 245, 245, 245; /* #f5f5f5 */
+  --bg-dark: 20, 20, 20; /* #141414 */
+  --bg-primary: #ff6633;
+  --bg-secondary: #00cccc;
 
-  --text-base: #000000;
-  --text-light: #eeeeee;
-  --text-dark: #141414;
-  --text-accent: #00cccc;
+  --color-white: 255, 255, 255; /* #ffffff */
+  --color-black: 0, 0, 0; /* #000000 */
+  --color-light: 245, 245, 245; /* #f5f5f5 */
+  --color-dark: 20fo, 20, 20; /* #141414 */
+  --color-primary: #00cccc;
+  --color-secondary: #ff6633;
 
-  --border-base: #3d3d3d;
+  --border-base: 204, 204, 204; /* #cccccc */
+  --border-white: #ffffff;
 
-  --border-radius-base: 0.25rem;
+  --rounded: 0.25rem;
 
-  --max-width-base: 2560px;
-  --max-width-small: 540px;
-  --max-width-medium: 720px;
-  --max-width-large: 960px;
-  --max-width-xlarge: 1140px;
-  --max-width-xxlarge: 1320px;
-  --max-width-fluid: 100%;
+  --max-w-base: 2560px;
+  --max-w-sm: 540px;
+  --max-w-md: 720px;
+  --max-w-lg: 960px;
+  --max-w-xl: 1140px;
+  --max-w-2xl: 1320px;
+  --max-w-full: 100%;
 }
-

@@ -41,9 +41,6 @@ add_action('wp_enqueue_scripts', function () {
  * Setup Images.
  */
 
-// Avoid thumbnails regeneration on theme change
-add_filter('woocommerce_background_image_regeneration', '__return_false');
-
 // Disable the scaling of big images.
 add_filter('big_image_size_threshold', '__return_false');
 
@@ -52,7 +49,7 @@ function disable_wp_responsive_images()
 {
 	return 1;
 }
-add_filter('max_srcset_image_width', 'disable_wp_responsive_images');
+//add_filter('max_srcset_image_width', 'disable_wp_responsive_images');
 
 /**
  * Admin setup.
@@ -112,7 +109,7 @@ function register_cpt_film()
 		'public' => true,
 		'publicly_queryable' => true,
 		'show_in_rest' => false,
-		'has_archive' => 'films',
+		'has_archive' => false,
 		'show_in_menu' => true,
 		'menu_position' => 3,
 		'show_in_nav_menus' => true,
@@ -229,9 +226,9 @@ function register_cpt_film_taxonomies()
 		'show_in_graphql' => false,
 		'rewrite' => ['slug' => 'sales'],
 		'capabilities' => array(
-			'manage_terms' => '', // manage_categories
-			'edit_terms' => '', // manage_categories
-			'delete_terms' => '', // manage_categories
+			'manage_terms' => 'manage_categories', // manage_categories
+			'edit_terms' => 'manage_categories', // manage_categories
+			'delete_terms' => 'manage_categories', // manage_categories
 			'assign_terms' => 'edit_posts'
 		),
 	];
