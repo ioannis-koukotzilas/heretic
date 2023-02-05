@@ -6,7 +6,7 @@
 
 if (!defined('_MONOSCOPIC_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_MONOSCOPIC_VERSION', '1.0.0');
+	define('_MONOSCOPIC_VERSION', '1.3.9');
 }
 
 /**
@@ -63,29 +63,29 @@ function monoscopic_scripts()
 {
 	// Styles.
 	wp_enqueue_style('style', get_stylesheet_uri(), array(), _MONOSCOPIC_VERSION);
-	wp_enqueue_style('normalize', get_template_directory_uri() . '/src/css/normalize.css', array(), '1.0.0');
-	wp_enqueue_style('fonts', get_template_directory_uri() . '/src/css/fonts.css', array(), '1.0.0');
-	wp_enqueue_style('variables', get_template_directory_uri() . '/src/css/variables.css', array(), '1.0.0');
-	wp_enqueue_style('main', get_template_directory_uri() . '/src/css/main.css', array(), '1.0.0');
+	wp_enqueue_style('normalize', get_template_directory_uri() . '/src/css/normalize.css', array(), _MONOSCOPIC_VERSION);
+	wp_enqueue_style('fonts', get_template_directory_uri() . '/src/css/fonts.css', array(), _MONOSCOPIC_VERSION);
+	wp_enqueue_style('variables', get_template_directory_uri() . '/src/css/variables.css', array(), _MONOSCOPIC_VERSION);
+	wp_enqueue_style('main', get_template_directory_uri() . '/src/css/main.css', array(), _MONOSCOPIC_VERSION);
 	
 	// Layouts.
-	wp_enqueue_style('site-header', get_template_directory_uri() . '/src/css/layouts/site-header.css', array(), '1.0.0');
-	wp_enqueue_style('site-footer', get_template_directory_uri() . '/src/css/layouts/site-footer.css', array(), '1.0.0');
+	wp_enqueue_style('site-header', get_template_directory_uri() . '/src/css/layouts/site-header.css', array(), _MONOSCOPIC_VERSION);
+	wp_enqueue_style('site-footer', get_template_directory_uri() . '/src/css/layouts/site-footer.css', array(), _MONOSCOPIC_VERSION);
 
 	// Components.
-	wp_enqueue_style('navigation', get_template_directory_uri() . '/src/css/components/navigation.css', array(), '1.0.0');
-	wp_enqueue_style('swiper', get_template_directory_uri() . '/src/css/components/swiper.css', array(), '8.4.5');
-	wp_enqueue_style('lightbox', get_template_directory_uri() . '/src/css/components/lightbox.css', array(), '8.4.5');
+	wp_enqueue_style('navigation', get_template_directory_uri() . '/src/css/components/navigation.css', array(), _MONOSCOPIC_VERSION);
+	wp_enqueue_style('swiper', get_template_directory_uri() . '/src/css/components/swiper.css', array(), _MONOSCOPIC_VERSION);
+	wp_enqueue_style('lightbox', get_template_directory_uri() . '/src/css/components/lightbox.css', array(), _MONOSCOPIC_VERSION);
 
 	// Content.
-	wp_enqueue_style('page', get_template_directory_uri() . '/src/css/content/page.css', array(), '1.0.0');
-	wp_enqueue_style('post', get_template_directory_uri() . '/src/css/content/post.css', array(), '1.0.0');
-	wp_enqueue_style('film', get_template_directory_uri() . '/src/css/content/film.css', array(), '1.0.0');
+	wp_enqueue_style('page', get_template_directory_uri() . '/src/css/content/page.css', array(), _MONOSCOPIC_VERSION);
+	wp_enqueue_style('post', get_template_directory_uri() . '/src/css/content/post.css', array(), _MONOSCOPIC_VERSION);
+	wp_enqueue_style('film', get_template_directory_uri() . '/src/css/content/film.css', array(), _MONOSCOPIC_VERSION);
 
 	// Scripts.
-	wp_enqueue_script('swiper', get_template_directory_uri() . '/src/js/swiper.js', array(), '1.0.0', true);
-	wp_enqueue_script('lightbox', get_template_directory_uri() . '/src/js/lightbox.js', array(), '1.0.0', true);
-	wp_enqueue_script('app', get_template_directory_uri() . '/src/js/main.js', array(), '1.0.0', true);
+	wp_enqueue_script('swiper', get_template_directory_uri() . '/src/js/swiper.js', array(), _MONOSCOPIC_VERSION, true);
+	wp_enqueue_script('lightbox', get_template_directory_uri() . '/src/js/lightbox.js', array(), _MONOSCOPIC_VERSION, true);
+	wp_enqueue_script('app', get_template_directory_uri() . '/src/js/main.js', array(), _MONOSCOPIC_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'monoscopic_scripts');
 
@@ -105,13 +105,25 @@ require get_template_directory() . '/inc/template-functions.php';
  * Change Posts Per Page for Archives
  */
 
-function monoscopic_archive_posts_per_page($query)
+function monoscopic_archive_post_posts_per_page($query)
 {
 	if ($query->is_main_query() && !is_admin() && is_tax()) {
-		$query->set('posts_per_page', '8');
+		$query->set('posts_per_page', '12');
 	}
 }
-add_action('pre_get_posts', 'monoscopic_archive_posts_per_page');
+add_action('pre_get_posts', 'monoscopic_archive_post_posts_per_page');
+
+/**
+ * Change Posts Per Page for Posts
+ */
+
+ function monoscopic_archive_film_posts_per_page($query)
+ {
+	 if ($query->is_main_query() && !is_admin() && is_category()) {
+		 $query->set('posts_per_page', '12');
+	 }
+ }
+ add_action('pre_get_posts', 'monoscopic_archive_film_posts_per_page');
 
 /**
  * Modify the Archive title.
@@ -119,9 +131,9 @@ add_action('pre_get_posts', 'monoscopic_archive_posts_per_page');
 
 function monoscopic_archive_title($title)
 {
-	if (is_post_type_archive()) {
-		$title = post_type_archive_title('', false);
-	} elseif (is_tax()) {
+	if (is_tax()) {
+		$title = single_term_title('', false);
+	} elseif (is_category()) {
 		$title = single_term_title('', false);
 	}
 	return $title;

@@ -7,6 +7,11 @@
   top: 0;
   z-index: 20;
   background-color: rgb(var(--bg-white));
+  transition: all 0.3s ease-in-out;
+}
+
+.site-header.hide {
+  top: -5.5rem;
 }
 
 .site-header > .container {

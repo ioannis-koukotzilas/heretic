@@ -3,7 +3,7 @@
 const espaModal = document.querySelector('.espa-modal');
 const espaModalToggle = document.querySelector('.espa-modal-toggle');
 
-if (sessionStorage.getItem('hereticEspaModal')) {
+if (localStorage.getItem('hereticEspaModal')) {
   espaModal.classList.remove('active');
 } else {
   espaModal.classList.add('active');
@@ -18,7 +18,7 @@ const espaModalClose = document.querySelector('.espa-modal-close');
 
 espaModalClose.addEventListener('click', function (e) {
   e.preventDefault();
-  sessionStorage.setItem('hereticEspaModal', true);
+  localStorage.setItem('hereticEspaModal', true);
   espaModal.classList.remove('active');
 });
 
@@ -39,24 +39,7 @@ document.querySelectorAll(':is(.featured-video) button').forEach((button) =>
 Swiper
 */
 
-const filmsSwiper = new Swiper('.featured .swiper', {
-  watchSlidesVisibility: true,
-  preloadImages: false,
-  lazy: false,
-  spaceBetween: 20,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  freeMode: {
-    enabled: true,
-  },
-  breakpoints: {
-    720: {
-      slidesPerView: 2,
-    },
-  },
-});
+
 
 const spotlightSwiper = new Swiper('.spotlight .swiper', {
   watchSlidesVisibility: true,
@@ -70,12 +53,55 @@ const spotlightSwiper = new Swiper('.spotlight .swiper', {
     enabled: true,
   },
   //allowTouchMove: false,
-  autoplay: {
-    delay: 7000,
-  },
+  // autoplay: {
+  //   delay: 7000,
+  // },
   breakpoints: {
     720: {
       // slidesPerView: 2,
+    },
+  },
+});
+
+const postersSwiper = new Swiper('.popular-now .swiper', {
+  watchSlidesVisibility: true,
+  preloadImages: false,
+  lazy: false,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  freeMode: {
+    enabled: true,
+  },
+  //allowTouchMove: false,
+  autoplay: {
+    delay: 2500,
+  },
+  loop: true,
+  breakpoints: {
+    720: {
+      slidesPerView: 5,
+    },
+  },
+});
+
+const filmsSwiper = new Swiper('.featured .swiper', {
+  watchSlidesVisibility: true,
+  preloadImages: false,
+  lazy: false,
+  spaceBetween: 24,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  freeMode: {
+    enabled: true,
+  },
+  breakpoints: {
+    720: {
+      slidesPerView: 2,
     },
   },
 });
@@ -201,3 +227,60 @@ if (gallery) {
   fsLightbox.props.UIFadeOutTime = 1000000;
   fsLightbox.props.slideDistance = 0.1;
 }
+
+
+// scroll
+
+(function(){
+
+  var doc = document.documentElement;
+  var w = window;
+
+  var prevScroll = w.scrollY || doc.scrollTop;
+  var curScroll;
+  var direction = 0;
+  var prevDirection = 0;
+
+  var header = document.querySelector('.site-header');
+
+  var checkScroll = function() {
+
+    /*
+    ** Find the direction of scroll
+    ** 0 - initial, 1 - up, 2 - down
+    */
+
+    curScroll = w.scrollY || doc.scrollTop;
+    if (curScroll > prevScroll) { 
+      //scrolled up
+      direction = 2;
+    }
+    else if (curScroll < prevScroll) { 
+      //scrolled down
+      direction = 1;
+    }
+
+    if (direction !== prevDirection) {
+      toggleHeader(direction, curScroll);
+    }
+
+    prevScroll = curScroll;
+  };
+
+  var toggleHeader = function(direction, curScroll) {
+    if (direction === 2 && curScroll > 275) { 
+
+      //replace 75 with the height of your header in px
+
+      header.classList.add('hide');
+      prevDirection = direction;
+    }
+    else if (direction === 1) {
+      header.classList.remove('hide');
+      prevDirection = direction;
+    }
+  };
+
+  window.addEventListener('scroll', checkScroll);
+
+})();

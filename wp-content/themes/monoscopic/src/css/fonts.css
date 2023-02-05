@@ -6,10 +6,10 @@
 --------------------------------------------- */
 
 @font-face {
-  font-family: 'Material-Icons';
+  font-family: 'Material Icons';
   font-style: normal;
   font-weight: normal;
-  src: url('../fonts/Material-Icons/Material-Icons.woff2') format('woff2'), url('../fonts/Material-Icons/Material-Icons.woff') format('woff');
+  src: url('../fonts/Material-Icons/material-icons-outlined.woff2') format('woff2'), url('../fonts/Material-Icons/material-icons-outlined.woff') format('woff');
 }
 
 /* Brown

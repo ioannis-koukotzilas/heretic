@@ -1,7 +1,7 @@
 <?php $film_gallery_images = get_field('film_gallery'); ?>
 <?php if ($film_gallery_images) :  ?>
     <section class="gallery">
-        <div class="container observe">
+        <div class="container">
             <div class="column-wrap">
                 <?php foreach ($film_gallery_images as $film_gallery_image) : ?>
                     <a data-fslightbox="gallery" href="<?php echo esc_url($film_gallery_image['sizes']['1536x1536']); ?>">

@@ -384,13 +384,13 @@ textarea {
 .espa-modal {
   position: fixed;
   z-index: 10;
-  top: calc(5.5rem);
+  bottom: 0;
   right: 0;
   width: 100%;
   background-color: rgb(var(--bg-light));
   visibility: hidden;
   opacity: 0;
-  transform: translateY(-12.5rem);
+  transform: translateY(12.5rem);
   transition: visibility 0.4s, transform 0.4s, opacity 0.4s;
 }
 
@@ -401,7 +401,6 @@ textarea {
 }
 
 .espa-modal .container {
-  position: relative;
   max-width: var(--max-w-xl);
   margin: 0 auto;
   padding: 0.75rem 1.75rem 0.75rem 0.75rem;
@@ -466,7 +465,7 @@ textarea {
 .navigation .nav-links {
   max-width: var(--max-w-2xl);
   margin: 0 auto;
-  padding: 0 20px 3rem;
+  padding: 0 20px 4.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -474,16 +473,40 @@ textarea {
   gap: 0.75rem;
 }
 
+.navigation .nav-links .current {
+  color: rgba(var(--color-dark), 0.75);
+}
+
 /* Underline
 --------------------------------------------- */
 
 .underline {
   text-decoration: underline;
+  text-underline-offset: 0.25rem;
 }
 
 /* Lazy Load
 --------------------------------------------- */
 
 img.perfmatters-lazy {
-  background: url('../../svg/sync_black_24dp.svg') no-repeat 50% 50%;
+  background: url('../svg/sync_black_24dp.svg') no-repeat 50% 50%;
+}
+
+/* Accesibility
+--------------------------------------------- */
+.film-single > .synopsis a,
+.post-single > .content a,
+.post-single > .cta a {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.film-single > .synopsis a[target='_blank']::after,
+.post-single > .content a[target='_blank']::after,
+.post-single > .cta a[target='_blank']::after {
+  font-family: var(--font-symbol);
+  content: '\f8ce';
+  display: inline-block;
+  line-height: 1;
+  vertical-align: text-top;
 }

@@ -1,6 +1,6 @@
 <header class="header">
 
-    <div class="container observe">
+    <div class="container">
 
         <?php the_archive_title('<h1 class="title">', '</h1>'); ?>
 

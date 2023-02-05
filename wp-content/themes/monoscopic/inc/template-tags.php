@@ -71,3 +71,45 @@ function monoscopic_pagination()
         'next_text' => __('Next', 'monoscopic'),
     ));
 }
+
+/**
+ * Publish Date
+ */
+
+function monoscopic_publish_date()
+{
+    $date = get_the_date('M j, Y');
+    $iso_date = get_the_date('c');
+    if ('post' === get_post_type()) {
+        echo '<time datetime="' . $iso_date . '" itemprop="date-published">' . $date . '</time>';
+    }
+}
+
+/**
+ * Meta information for category taxonomy
+ */
+
+function monoscopic_category_terms()
+{
+    if ('post' === get_post_type()) {
+        $terms = get_the_terms(get_post()->ID, 'category');
+        if ($terms) {
+            echo '<ul class="terms category">';
+            foreach ($terms as $term) {
+                echo '<li>' . esc_html($term->name) . '</li>';
+            }
+            echo '</ul>';
+        }
+    }
+}
+
+function monoscopic_category_terms_links()
+{
+    if ('post' === get_post_type()) {
+
+        $terms = get_the_term_list(get_post()->ID, 'category', '<ul class="terms category"><li>', '</li><li>', '</li></ul>');
+        if ($terms) {
+            echo $terms;
+        }
+    }
+}

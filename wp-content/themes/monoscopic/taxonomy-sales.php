@@ -6,9 +6,9 @@
 
         <?php if (have_posts()) : ?>
 
-            <?php get_template_part('template-parts/archive-film/archive-film-header'); ?>
+            <?php get_template_part('template-parts/film/archive-film-header'); ?>
 
-            <?php get_template_part('template-parts/archive-film/archive-film-content'); ?>
+            <?php get_template_part('template-parts/film/archive-film-content'); ?>
 
             <?php monoscopic_pagination(); ?>
 
