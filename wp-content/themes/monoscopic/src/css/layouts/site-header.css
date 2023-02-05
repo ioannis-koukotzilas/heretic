@@ -5,24 +5,30 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
   background-color: rgb(var(--bg-white));
 }
 
 .site-header > .container {
-  max-width: var(--max-w-2xl);
+  max-width: var(--max-w-xl);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 1rem 20px;
   display: flex;
   gap: 1.5rem;
   align-items: center;
   justify-content: space-between;
 }
 
+@media (min-width: 720px) {
+  .site-header > .container {
+    height: 5.5rem;
+  }
+}
+
 .site-title {
   margin: 0;
   font-family: var(--font-brand);
-  font-size: var(--font-lg);
+  font-size: var(--font-3xl);
   font-weight: var(--font-regular);
   text-transform: lowercase;
 }
@@ -33,12 +39,23 @@
   gap: 1rem;
 }
 
-.trademark {
+.site-title .trademark {
   margin-top: 0.5rem;
 }
 
-.trademark svg {
+.site-title .trademark svg {
   display: block;
   width: 1.25rem;
   height: auto;
+  fill: rgba(var(--color-dark), 1);
+}
+
+.site-title a:visited .trademark svg {
+  fill: rgba(var(--color-dark), 1);
+}
+
+.site-title a:hover .trademark svg,
+.site-title a:focus .trademark svg,
+.site-title a:active .trademark svg {
+  fill: rgba(var(--color-dark), 0.75);
 }

@@ -1,3 +1,27 @@
+// Espa Banner
+
+const espaModal = document.querySelector('.espa-modal');
+const espaModalToggle = document.querySelector('.espa-modal-toggle');
+
+if (sessionStorage.getItem('hereticEspaModal')) {
+  espaModal.classList.remove('active');
+} else {
+  espaModal.classList.add('active');
+}
+
+espaModalToggle.addEventListener('click', function (e) {
+  e.preventDefault();
+  espaModal.classList.add('active');
+});
+
+const espaModalClose = document.querySelector('.espa-modal-close');
+
+espaModalClose.addEventListener('click', function (e) {
+  e.preventDefault();
+  sessionStorage.setItem('hereticEspaModal', true);
+  espaModal.classList.remove('active');
+});
+
 /*
 Video
 */
@@ -15,7 +39,7 @@ document.querySelectorAll(':is(.featured-video) button').forEach((button) =>
 Swiper
 */
 
-const filmsSlider = new Swiper('.featured .swiper', {
+const filmsSwiper = new Swiper('.featured .swiper', {
   watchSlidesVisibility: true,
   preloadImages: false,
   lazy: false,
@@ -30,6 +54,28 @@ const filmsSlider = new Swiper('.featured .swiper', {
   breakpoints: {
     720: {
       slidesPerView: 2,
+    },
+  },
+});
+
+const spotlightSwiper = new Swiper('.spotlight .swiper', {
+  watchSlidesVisibility: true,
+  preloadImages: false,
+  lazy: false,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  freeMode: {
+    enabled: true,
+  },
+  //allowTouchMove: false,
+  autoplay: {
+    delay: 7000,
+  },
+  breakpoints: {
+    720: {
+      // slidesPerView: 2,
     },
   },
 });
@@ -72,7 +118,7 @@ Intersection Observer
 const observerRoot = document.querySelector('.amenities');
 const observerElements = document.querySelectorAll('.observe');
 
-const callback = (entries, observer) => {
+const callback = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('animated');
@@ -82,7 +128,7 @@ const callback = (entries, observer) => {
 
 const options = {
   // root: container,
-  threshold: 0.25,
+  threshold: 0.1,
 };
 
 const observer = new IntersectionObserver(callback, options);

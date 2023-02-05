@@ -67,10 +67,9 @@ function monoscopic_scripts()
 	wp_enqueue_style('fonts', get_template_directory_uri() . '/src/css/fonts.css', array(), '1.0.0');
 	wp_enqueue_style('variables', get_template_directory_uri() . '/src/css/variables.css', array(), '1.0.0');
 	wp_enqueue_style('main', get_template_directory_uri() . '/src/css/main.css', array(), '1.0.0');
-
+	
 	// Layouts.
 	wp_enqueue_style('site-header', get_template_directory_uri() . '/src/css/layouts/site-header.css', array(), '1.0.0');
-	wp_enqueue_style('site-main', get_template_directory_uri() . '/src/css/layouts/site-main.css', array(), '1.0.0');
 	wp_enqueue_style('site-footer', get_template_directory_uri() . '/src/css/layouts/site-footer.css', array(), '1.0.0');
 
 	// Components.
@@ -82,8 +81,6 @@ function monoscopic_scripts()
 	wp_enqueue_style('page', get_template_directory_uri() . '/src/css/content/page.css', array(), '1.0.0');
 	wp_enqueue_style('post', get_template_directory_uri() . '/src/css/content/post.css', array(), '1.0.0');
 	wp_enqueue_style('film', get_template_directory_uri() . '/src/css/content/film.css', array(), '1.0.0');
-	wp_enqueue_style('film-archive', get_template_directory_uri() . '/src/css/content/film-archive.css', array(), '1.0.0');
-	wp_enqueue_style('films-list', get_template_directory_uri() . '/src/css/content/films-list.css', array(), '1.0.0');
 
 	// Scripts.
 	wp_enqueue_script('swiper', get_template_directory_uri() . '/src/js/swiper.js', array(), '1.0.0', true);

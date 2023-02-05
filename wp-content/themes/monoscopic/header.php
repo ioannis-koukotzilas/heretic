@@ -35,7 +35,7 @@
 						<span class="logo">
 
 							<?php bloginfo('name'); ?>
-							
+
 						</span>
 
 					</a>

@@ -12,8 +12,6 @@
 
                         <?php the_post_thumbnail('large')  ?>
 
-                        <?php monoscopic_production_terms(); ?>
-
                         <?php the_title('<h3 class="title">', '</h3>'); ?>
 
                     </a>

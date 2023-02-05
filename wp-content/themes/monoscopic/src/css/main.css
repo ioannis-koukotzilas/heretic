@@ -51,38 +51,14 @@ textarea {
 
 h1 {
   font-size: var(--font-5xl);
-  font-weight: var(--font-bold);
+  font-weight: var(--font-medium);
   line-height: var(--leading-none);
-}
-
-@media (min-width: 720px) {
-  h1 {
-    font-size: var(--font-6xl);
-  }
-}
-
-@media (min-width: 960px) {
-  h1 {
-    font-size: var(--font-6xl);
-  }
-}
-
-@media (min-width: 1140px) {
-  h1 {
-    font-size: var(--font-7xl);
-  }
 }
 
 h2 {
   font-size: var(--font-4xl);
   font-weight: var(--font-medium);
-  line-height: var(--leading-tight);
-}
-
-@media (min-width: 720px) {
-  h2 {
-    font-size: var(--font-5xl);
-  }
+  line-height: var(--leading-none);
 }
 
 h3 {
@@ -91,22 +67,10 @@ h3 {
   line-height: var(--leading-snug);
 }
 
-@media (min-width: 720px) {
-  h3 {
-    font-size: var(--font-4xl);
-  }
-}
-
 h4 {
   font-size: var(--font-lg);
   font-weight: var(--font-bold);
   line-height: var(--leading-snug);
-}
-
-@media (min-width: 720px) {
-  h4 {
-    font-size: var(--font-xl);
-  }
 }
 
 h5 {
@@ -162,7 +126,7 @@ ins {
 --------------------------------------------- */
 body {
   min-height: 100vh;
-  background-color: rgb(var(--bg-dark));
+  background-color: #eee;
 }
 
 hr {
@@ -231,7 +195,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-  color: rgba(var(--color-dark), 0.5);
+  color: rgba(var(--color-dark), 0.75);
   outline: 0;
 }
 
@@ -306,6 +270,7 @@ input[type='datetime-local']:focus,
 input[type='color']:focus,
 textarea:focus {
   color: rgba(var(--color-dark), 1);
+  outline: 0;
 }
 
 select {
@@ -363,10 +328,162 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# Site
+# Components
 --------------------------------------------------------------*/
 
+/* Site
+--------------------------------------------- */
+
 .site {
-  max-width: var(--max-width-base);
+  max-width: var(--max-w-base);
   margin: 0 auto;
+}
+
+/* Symbols
+--------------------------------------------- */
+
+.symbol {
+  font-family: var(--font-symbol);
+  font-variation-settings: var(--symbol-variation-settings);
+  line-height: var(--leading-none);
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+}
+
+.symbol-md {
+  font-size: var(--font-md);
+}
+
+.symbol-lg {
+  font-size: var(--font-lg);
+}
+
+.symbol-xl {
+  font-size: var(--font-xl);
+}
+
+.symbol-2xl {
+  font-size: var(--font-2xl);
+}
+
+.symbol-3xl {
+  font-size: var(--font-3xl);
+}
+
+.symbol-close::after {
+  content: '\e5cd';
+}
+
+/* Espa Modal
+--------------------------------------------- */
+
+.espa-modal {
+  position: fixed;
+  z-index: 10;
+  top: calc(5.5rem);
+  right: 0;
+  width: 100%;
+  background-color: rgb(var(--bg-light));
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-12.5rem);
+  transition: visibility 0.4s, transform 0.4s, opacity 0.4s;
+}
+
+.espa-modal.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.espa-modal .container {
+  position: relative;
+  max-width: var(--max-w-xl);
+  margin: 0 auto;
+  padding: 0.75rem 1.75rem 0.75rem 0.75rem;
+}
+
+.espa-modal .espa-modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(var(--color-dark), 1);
+  color: rgba(var(--color-light), 1);
+  cursor: pointer;
+}
+
+.espa-modal .espa-banner {
+  width: 100%;
+  max-width: 375px;
+  mix-blend-mode: multiply;
+}
+
+/* Eyebrow
+--------------------------------------------- */
+
+.eyebrow {
+  font-size: var(--font-sm);
+  color: rgba(var(--color-dark), 0.75);
+  text-transform: uppercase;
+}
+
+/* Buttom
+--------------------------------------------- */
+
+.btn-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s;
+}
+
+.btn-dark:hover,
+.btn-dark:focus {
+  background-color: var(--bg-dark-hover);
+}
+
+/* Observer
+--------------------------------------------- */
+
+.observe {
+  opacity: 0;
+  transform: translateY(2.5rem);
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.observe.animated {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* Pagination
+--------------------------------------------- */
+
+.navigation .nav-links {
+  max-width: var(--max-w-2xl);
+  margin: 0 auto;
+  padding: 0 20px 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Underline
+--------------------------------------------- */
+
+.underline {
+  text-decoration: underline;
+}
+
+/* Lazy Load
+--------------------------------------------- */
+
+img.perfmatters-lazy {
+  background: url('../../svg/sync_black_24dp.svg') no-repeat 50% 50%;
 }

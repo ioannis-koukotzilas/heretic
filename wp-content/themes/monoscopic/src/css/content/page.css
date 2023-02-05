@@ -1,19 +1,123 @@
-
-.page-default {
-    background-color: var(--bg-base);
+.page {
+  background-color: rgb(var(--bg-white));
 }
 
-.page-default > .container {
-  max-width: var(--max-width-medium);
+.page > .header .container {
+  max-width: var(--max-w-md);
   margin: 0 auto;
-  padding: 4.5rem 20px;
+  padding: 4.5rem 20px 3rem;
 }
 
-.page-default .entry-title {
-    text-transform: uppercase;
-    text-align: center;
+.page > .header .title {
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.page-default .entry-content {
-    letter-spacing: var(--letter-spacing-base);
+.page > .content .container {
+  max-width: var(--max-w-md);
+  margin: 0 auto;
+  padding: 0 20px 4.5rem;
 }
+
+/* production */
+
+.page > .featured {
+  background-color: rgb(var(--bg-light));
+}
+
+.page > .featured .container {
+  max-width: var(--max-w-xl);
+  margin: 0 auto;
+  padding: 3rem 20px 0;
+}
+
+.page > .featured:last-child .container {
+  padding: 3rem 20px 4.5rem;
+}
+
+.page > .featured .title {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Home
+--------------------------------------------- */
+
+/* Spotlight */
+
+/* .home > .spotlight {
+  background-color: rgb(var(--bg-dark));
+} */
+
+.home > .spotlight > .container {
+  max-width: var(--max-w-full);
+  margin: 0 auto;
+  padding: 0 0 4.5rem;
+}
+
+.home > .spotlight a {
+  display: block;
+  color: rgba(var(--color-light), 1);
+}
+
+.home > .spotlight figure {
+  position: relative;
+}
+
+.home > .spotlight figure img {
+  object-fit: cover;
+  width: 100%;
+  height: 65vh;
+}
+
+@media (min-width: 720px) {
+  .home > .spotlight figure img {
+    height: calc(100vh - 5.5rem);
+  }
+}
+
+.home > .spotlight figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.home > .spotlight figcaption .container {
+  max-width: var(--max-w-lg);
+  margin: 0 auto;
+  padding: 1.5rem 20px;
+}
+
+.home > .spotlight figcaption .container:hover {
+  color: rgba(var(--color-light), 0.75);
+}
+
+.home > .spotlight .swiper ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Seo */
+
+.home > .seo .container {
+  max-width: var(--max-w-md);
+  margin: 0 auto;
+  padding: 4.5rem 20px 3rem;
+}
+
+.home > .seo h1 {
+  font-size: var(--font-4xl);
+}
+
+/* Popular */
+
+.home > .popular .container {
+  max-width: var(--max-w-md);
+  margin: 0 auto;
+  padding: 4.5rem 20px 3rem;
+}
+
+

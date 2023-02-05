@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-# Signle Film
+# Film Single
 --------------------------------------------------------------*/
 
 /* Header
@@ -39,7 +39,6 @@
   border-radius: var(--rounded);
   font-size: var(--font-sm);
   font-weight: var(--font-medium);
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 }
 
 .single-film > .header .meta .terms a:hover,
@@ -272,7 +271,7 @@
 }
 
 .single-film > .featured .container {
-  max-width: var(--max-w-2xl);
+  max-width: var(--max-w-xl);
   margin: 0 auto;
   padding: 4.5rem 0 0;
 }
@@ -287,4 +286,114 @@
   padding: 0 20px;
   text-align: center;
   text-transform: uppercase;
+}
+
+/*--------------------------------------------------------------
+# Film Archive
+--------------------------------------------------------------*/
+
+.archive-film {
+  background-color: rgb(var(--bg-white));
+}
+.archive-film > .header .container {
+  max-width: var(--max-w-lg);
+  margin: 0 auto;
+  padding: 4.5rem 20px 3rem;
+}
+
+.archive-film > .header .title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.archive-film > .content .container {
+  max-width: var(--max-w-xl);
+  margin: 0 auto;
+  padding: 0 20px 3rem;
+}
+
+.archive-film > .content .films {
+  display: grid;
+  row-gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .archive-film > .content .films {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Film Loop
+--------------------------------------------------------------*/
+
+.films {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.films > .film {
+  position: relative;
+}
+
+.films > .film a {
+  display: block;
+  background-color: rgb(var(--bg-dark));
+}
+
+.films > .film img {
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  opacity: 0.75;
+}
+
+.films > .film a:visited img {
+  opacity: 0.75;
+}
+
+.films > .film a:hover img,
+.films > .film a:focus img,
+.films > .film a:active img {
+  opacity: 1;
+}
+
+.films > .film .title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 20px;
+  text-transform: uppercase;
+  font-size: var(--font-lg);
+  line-height: var(--leading-none);
+  color: rgb(var(--color-light));
+}
+
+@media (min-width: 720px) {
+  .films > .film .title {
+    font-size: var(--font-xl);
+  }
+}
+
+.films > .film .terms {
+  position: absolute;
+  top: 0;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+  color: rgb(var(--color-light));
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.films > .film .terms li {
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(var(--bg-dark), 0.35);
+  border-radius: var(--rounded);
 }
