@@ -35,8 +35,8 @@
 			<?php endif; ?>
 
 			<?php if (get_the_content()) : ?>
-				<section class="content">
-					<div class="container observe">
+				<section class="content observe">
+					<div class="container">
 						<?php the_content(); ?>
 					</div>
 				</section>
@@ -45,10 +45,10 @@
 			<?php if (have_rows('post_cta')) : ?>
 				<div class="cta">
 					<div class="container">
-						<h4 class="title"><?php esc_html_e('Related links', 'monoscopic'); ?></h4>
+						<h4 class="title observe"><?php esc_html_e('Related links', 'monoscopic'); ?></h4>
 						<ul>
 							<?php while (have_rows('post_cta')) : the_row(); ?>
-								<li>
+								<li class="observe">
 									<?php $post_cta_link = get_sub_field('post_cta_link'); ?>
 									<?php if ($post_cta_link) : ?>
 										<a href="<?php echo esc_url($post_cta_link['url']); ?>" target="<?php echo esc_attr($post_cta_link['target']); ?>"><?php echo esc_html($post_cta_link['title']); ?></a>

@@ -2,34 +2,34 @@
 
 	<div class="container">
 
+		<h1 class="site-title">
+			<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+				<span class="trademark">
+					<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 48 100">
+						<path fill-rule="nonzero" d="M16.685 0 .047 62.803l17.182-4.078L1.762 100l45.899-64.441-26.003 4.043L45.252 0H16.685" />
+					</svg>
+				</span>
+				<span class="logo">
+					<?php bloginfo('name'); ?>
+				</span>
+			</a>
+		</h1>
+
 		<div class="grid">
 
+			<div class="grid-col">
 
-			<div>
-				<h5><?php esc_html_e('Newsletter', 'monoscopic'); ?></h5>
-				<div id="mc_embed_signup" class="newsletter">
-					<form action="https://eligoaudioculture.us17.list-manage.com/subscribe/post?u=25a0ffd22c964a0502f3d7e40&amp;id=03e38fc5c8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
-						<div id="mc_embed_signup_scroll" class="wrapper">
-							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address">
-							<div id="mce-responses" class="clear foot">
-								<div class="response" id="mce-error-response" style="display:none"></div>
-								<div class="response" id="mce-success-response" style="display:none"></div>
-							</div>
-
-							<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_25a0ffd22c964a0502f3d7e40_03e38fc5c8" tabindex="-1" value=""></div>
-							<div class="optionalParent">
-								<div class="clear foot">
-									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-								</div>
-							</div>
-						</div>
+				<div class="newsletter">
+					<h5><?php esc_html_e('Newsletter', 'monoscopic'); ?></h5>
+					<form action="https://heretic.us14.list-manage.com/subscribe/post?u=d46408426d834a92313b562f2&amp;id=d857ad6a3a&amp;f_id=009990e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self">
+						<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required placeholder="E-mail">
+						<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
 					</form>
 				</div>
 
-				<nav>
+				<nav class="social-networks">
 					<h5><?php esc_html_e('Social Networks', 'monoscopic'); ?></h5>
-
-					<ul class="social-networks">
+					<ul>
 						<li>
 							<a href="https://www.facebook.com/Heretic.filmhouse" target="_blank" rel="noopener noreferrer">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -68,35 +68,37 @@
 			</div>
 
 
-			<div>
-				<nav>
+			<div class="grid-col">
+
+				<nav class="production">
 					<h5><?php esc_html_e('Production', 'monoscopic'); ?></h5>
-					<ul class="menu production">
+					<ul class="menu">
 						<li><a href="#" title="<?php esc_html_e('Completed', 'monoscopic'); ?>"><?php esc_html_e('Completed', 'monoscopic'); ?></a></li>
 						<li><a href="#" title="<?php esc_html_e('In Production', 'monoscopic'); ?>"><?php esc_html_e('In Production', 'monoscopic'); ?></a></li>
 						<li><a href="#" title="<?php esc_html_e('In Development', 'monoscopic'); ?>"><?php esc_html_e('In Development', 'monoscopic'); ?></a></li>
 					</ul>
 				</nav>
-				<nav>
+
+				<nav class="sales">
 					<h5><?php esc_html_e('Sales', 'monoscopic'); ?></h5>
-					<ul class="menu sales">
+					<ul class="menu">
 						<li><a href="#" title="<?php esc_html_e('Line Up', 'monoscopic'); ?>"><?php esc_html_e('Line Up', 'monoscopic'); ?></a></li>
 						<li><a href="#" title="<?php esc_html_e('Catalogue', 'monoscopic'); ?>"><?php esc_html_e('Catalogue', 'monoscopic'); ?></a></li>
 					</ul>
 				</nav>
+
 			</div>
 
-			<div>
-				<nav>
+			<div class="grid-col">
+
+				<nav class="contact">
 					<h5><?php esc_html_e('Contact', 'monoscopic'); ?></h5>
-					<ul class="menu contact">
+					<ul class="menu">
 						<li><a href="http://" title="<?php esc_html_e('Open in Google Maps', 'monoscopic'); ?>" target="_blank" rel="noopener noreferrer">36, Alkmanos street, 11 528, Athens, Greece</a></li>
 						<li><a href="mailto:info@heretic.gr" title="<?php esc_html_e('Send E-mail', 'monoscopic'); ?>">info@heretic.gr</a></li>
 						<li><a href="tel:+302106005260" title="<?php esc_html_e('Call', 'monoscopic'); ?>">+30 21 0600 5260</a></li>
 					</ul>
 				</nav>
-
-
 
 			</div>
 
@@ -109,11 +111,8 @@
 <div class="cc">
 	<div class="container">
 		<div>Copyright © <?php echo date('Y'); ?> Heretic. <a href="#"><?php esc_html_e('Privacy and Cookie Notice', 'monoscopic'); ?></a></div>
-
 		<div>Visual Communication & Web Development - MONOSCOPIC</div>
-
-		<div class="espa-modal-toggle">toggle</div>
-
+		<div class="espa-modal-toggle">EPAnEK 2014-2020</div>
 	</div>
 </div>
 
@@ -124,8 +123,6 @@
 	</div>
 </div>
 
-
-
 </div>
 
 <?php wp_footer(); ?>
@@ -133,3 +130,5 @@
 </body>
 
 </html>
+
+<?php ob_end_flush(); ?>

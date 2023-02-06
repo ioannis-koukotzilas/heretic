@@ -23,16 +23,22 @@ $query = new WP_Query(array(
     <section class="featured">
         <div class="container observe">
 
-            <?php $term = get_term_by('id', '10', 'production'); ?>
+            <?php $term = get_term_by('id', '12', 'production'); ?>
             <?php $term_link = get_term_link($term); ?>
 
-            <h3 class="title">
-                <a href="<?php echo esc_url($term_link); ?>" rel="bookmark" title="<?php echo esc_html($term->name); ?>">
-                    <?php esc_html_e('Completed', 'monoscopic'); ?>
-                </a>
-            </h3>
+            <div class="title-wrap observe">
 
-            <div class="swiper">
+                <h3 class="title">
+                    <?php esc_html_e('Completed', 'monoscopic'); ?>
+                </h3>
+
+                <a href="<?php echo esc_url($term_link); ?>" rel="bookmark" class="cta underline">
+                    <?php esc_html_e('View all', 'monoscopic'); ?>
+                </a>
+
+            </div>
+
+            <div class="swiper observe">
                 <ul class="films swiper-wrapper">
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
                         <li class="film swiper-slide">

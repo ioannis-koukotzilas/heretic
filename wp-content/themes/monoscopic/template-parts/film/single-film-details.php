@@ -8,11 +8,11 @@
 
                 <div class="info">
 
-                    <div class="container observe">
+                    <div class="container">
 
-                        <h3 class="title"><?php esc_html_e('Info', 'monoscopic'); ?></h3>
+                        <h3 class="title observe"><?php esc_html_e('Info', 'monoscopic'); ?></h3>
 
-                        <div class="content">
+                        <div class="content observe">
 
                             <?php the_field('film_info'); ?>
 
@@ -28,11 +28,11 @@
 
                 <div class="festivals">
 
-                    <div class="container observe">
+                    <div class="container">
 
-                        <h3 class="title"><?php esc_html_e('Festivals', 'monoscopic'); ?></h3>
+                        <h3 class="title observe"><?php esc_html_e('Festivals', 'monoscopic'); ?></h3>
 
-                        <div class="content">
+                        <div class="content observe">
 
                             <?php the_field('film_festivals'); ?>
 

@@ -205,11 +205,11 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-  border: 1px solid;
+  border: 1px solid rgba(var(--bg-dark), 1);
   border-radius: var(--rounded);
   background-color: rgba(var(--bg-dark), 1);
   color: rgb(var(--color-light));
-  line-height: var(--line-height-solid);
+  line-height: var(--leading-none);
   padding: 0.5rem 1rem;
 }
 
@@ -217,7 +217,8 @@ button:hover,
 input[type='button']:hover,
 input[type='reset']:hover,
 input[type='submit']:hover {
-  border-color: #ccc #bbb #aaa;
+  opacity: 0.75;
+  cursor: pointer;
 }
 
 button:active,
@@ -228,7 +229,7 @@ input[type='reset']:active,
 input[type='reset']:focus,
 input[type='submit']:active,
 input[type='submit']:focus {
-  border-color: #aaa #bbb #bbb;
+  opacity: 0.75;
 }
 
 input[type='text'],
@@ -247,10 +248,10 @@ input[type='datetime'],
 input[type='datetime-local'],
 input[type='color'],
 textarea {
-  color: rgba(var(--color-dark), 0.5);
-  border: 1px solid var(--border-base);
+  color: rgba(var(--color-dark), 0.75);
+  border: 1px solid rgba(var(--bg-dark), 0.25);
   border-radius: var(--rounded);
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 input[type='text']:focus,
@@ -269,12 +270,13 @@ input[type='datetime']:focus,
 input[type='datetime-local']:focus,
 input[type='color']:focus,
 textarea:focus {
+  border-color: rgba(var(--color-dark), 0.5);
   color: rgba(var(--color-dark), 1);
   outline: 0;
 }
 
 select {
-  border: 1px solid var(--border-base);
+  border: 1px solid rgba(var(--bg-dark), 0.25);
 }
 
 textarea {
@@ -421,12 +423,33 @@ textarea {
   mix-blend-mode: multiply;
 }
 
+/* Title Wrap
+--------------------------------------------- */
+
+.title-wrap {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.title-wrap .title {
+  margin: 0;
+  line-height: var(--leading-none);
+  text-transform: uppercase;
+}
+
+.title-wrap .cta {
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+}
+
 /* Eyebrow
 --------------------------------------------- */
 
 .eyebrow {
   font-size: var(--font-sm);
-  color: rgba(var(--color-dark), 0.75);
   text-transform: uppercase;
 }
 
@@ -491,6 +514,12 @@ textarea {
 img.perfmatters-lazy {
   background: url('../svg/sync_black_24dp.svg') no-repeat 50% 50%;
 }
+
+img.perfmatters-lazy.pmloaded {
+  background: none;
+}
+
+
 
 /* Accesibility
 --------------------------------------------- */

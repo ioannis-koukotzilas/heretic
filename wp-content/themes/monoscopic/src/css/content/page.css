@@ -23,25 +23,10 @@
   padding: 0 20px 4.5rem;
 }
 
-/* production */
-
-.page > .featured {
-  background-color: rgb(var(--bg-light));
-}
-
 .page > .featured .container {
   max-width: var(--max-w-xl);
   margin: 0 auto;
-  padding: 3rem 20px 0;
-}
-
-.page > .featured:last-child .container {
-  padding: 3rem 20px 4.5rem;
-}
-
-.page > .featured .title {
-  text-transform: uppercase;
-  text-align: center;
+  padding: 0 20px 4.5rem;
 }
 
 /*--------------------------------------------------------------
@@ -58,7 +43,6 @@
 .home > .spotlight > .container {
   max-width: var(--max-w-full);
   margin: 0 auto;
-  padding: 0 0 4.5rem;
 }
 
 .home > .spotlight .swiper ul {
@@ -84,7 +68,7 @@
 
 @media (min-width: 720px) {
   .home > .spotlight figure img {
-    height: calc(100vh - 5.5rem);
+    height: calc(100vh - 5rem);
   }
 }
 
@@ -112,6 +96,35 @@
   margin-bottom: 0.75rem;
 }
 
+/* Animations */
+
+.spotlight figcaption :is(.title, .subtitle) {
+  visibility: hidden;
+}
+
+.spotlight .swiper-slide-active figcaption .title {
+  animation: spotlight 400ms;
+  animation-delay: 600ms;
+  animation-fill-mode: backwards;
+  visibility: visible;
+}
+
+.spotlight .swiper-slide-active figcaption .subtitle {
+  animation: spotlight 400ms;
+  animation-delay: 1200ms;
+  animation-fill-mode: backwards;
+  visibility: visible;
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* SEO
 --------------------------------------------- */
 
@@ -132,6 +145,11 @@
 .home > .seo h1 {
   font-size: var(--font-3xl);
   text-transform: uppercase;
+  margin-top: 1.5rem;
+}
+
+.home > .seo .content {
+  padding-top: 1.5rem;
 }
 
 /* Popular Now
@@ -145,6 +163,7 @@
 
 .home > .popular-now .title {
   text-transform: uppercase;
+  line-height: var(--leading-none);
 }
 
 .home > .popular-now .swiper ul {

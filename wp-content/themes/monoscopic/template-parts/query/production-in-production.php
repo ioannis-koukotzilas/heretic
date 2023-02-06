@@ -26,11 +26,17 @@ $query = new WP_Query(array(
             <?php $term = get_term_by('id', '10', 'production'); ?>
             <?php $term_link = get_term_link($term); ?>
 
-            <h3 class="title">
-                <a href="<?php echo esc_url($term_link); ?>" rel="bookmark" title="<?php echo esc_html($term->name); ?>">
+            <div class="title-wrap observe">
+
+                <h3 class="title">
                     <?php esc_html_e('In production', 'monoscopic'); ?>
+                </h3>
+
+                <a href="<?php echo esc_url($term_link); ?>" rel="bookmark" class="cta underline">
+                    <?php esc_html_e('View all', 'monoscopic'); ?>
                 </a>
-            </h3>
+
+            </div>
 
             <div class="swiper">
                 <ul class="films swiper-wrapper">

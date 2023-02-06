@@ -7,17 +7,22 @@
   top: 0;
   z-index: 20;
   background-color: rgb(var(--bg-white));
-  transition: all 0.3s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 6px 1px rgba(29,17,51,.04),0 0 8px 2px rgba(9,32,77,.12),0 0 5px -3px rgba(29,17,51,.12);
 }
 
 .site-header.hide {
   top: -5.5rem;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .site-header > .container {
   max-width: var(--max-w-xl);
   margin: 0 auto;
-  padding: 1rem 20px;
+  padding: 0 20px;
   display: flex;
   gap: 1.5rem;
   align-items: center;
@@ -26,9 +31,12 @@
 
 @media (min-width: 720px) {
   .site-header > .container {
-    height: 5.5rem;
+    height: 5rem;
   }
 }
+
+/* Site Title
+--------------------------------------------- */
 
 .site-title {
   margin: 0;
@@ -39,13 +47,14 @@
 }
 
 .site-title a {
+  padding: 1rem 0;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .site-title .trademark {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .site-title .trademark svg {
@@ -63,4 +72,72 @@
 .site-title a:focus .trademark svg,
 .site-title a:active .trademark svg {
   fill: rgba(var(--color-dark), 0.75);
+}
+
+/* Main Navigation
+--------------------------------------------- */
+
+.site-header .main-nav {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .site-header .main-nav {
+    display: block;
+  }
+}
+
+.site-header .main-nav .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  font-weight: var(--font-medium);
+}
+
+.site-header .main-nav .menu > .menu-item {
+  position: relative;
+}
+
+.site-header .main-nav .menu > .menu-item > a {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.site-header .main-nav .menu > .menu-item:last-child > a {
+  padding-right: 0;
+}
+
+.site-header .main-nav .menu > .menu-item > .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: max-content;
+  max-width: 25rem;
+  padding: 0;
+  background-color: rgb(var(--bg-white));
+  border: 1px solid rgba(var(--color-dark), 1);
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.site-header .main-nav .menu > .menu-item-has-children:last-child > .sub-menu {
+  left: auto;
+  right: 0;
+}
+
+.site-header .main-nav .menu > .menu-item-has-children:hover > .sub-menu {
+  display: block;
+}
+
+.site-header .main-nav .menu > .menu-item-has-children > .sub-menu > li > a {
+  display: block;
+  padding: 0.5rem 1rem;
+  margin: 0;
 }

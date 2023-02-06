@@ -2,11 +2,11 @@
 
     <section class="synopsis">
 
-        <div class="container observe">
+        <div class="container">
 
-            <h2 class="title">Synopsis</h2>
+            <h2 class="title observe">Synopsis</h2>
 
-            <div class="content">
+            <div class="content observe">
 
                 <?php the_content(); ?>
 

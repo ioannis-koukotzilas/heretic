@@ -27,12 +27,12 @@ $query = new WP_Query(array(
 
     <section class="featured production">
 
-        <div class="container observe">
+        <div class="container">
 
-            <div class="eyebrow"><?php esc_html_e('Discover more', 'monoscopic'); ?></div>
-            <h3 class="title"><?php esc_html_e('Production', 'monoscopic'); ?></h3>
+            <div class="eyebrow observe"><?php esc_html_e('Discover more', 'monoscopic'); ?></div>
+            <h3 class="title observe"><?php esc_html_e('Production', 'monoscopic'); ?></h3>
 
-            <div class="swiper">
+            <div class="swiper observe">
 
                 <ul class="films swiper-wrapper">
                     <?php while ($query->have_posts()) : $query->the_post(); ?>

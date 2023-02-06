@@ -7,7 +7,7 @@
 
                     
 
-                        <figure class="logo">
+                        <figure class="logo observe">
 
                             <img src="<?php echo esc_url($film_logos_image['sizes']['medium']); ?>" alt="<?php echo esc_attr($film_logos_image['alt']); ?>" />
 

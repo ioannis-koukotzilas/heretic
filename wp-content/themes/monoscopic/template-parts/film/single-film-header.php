@@ -1,6 +1,6 @@
 <header class="header">
 
-	<div class="container observe">
+	<div class="container">
 
 		<?php if (has_term('', 'production') or has_term('', 'sales')) : ?>
 			<div class="meta">
