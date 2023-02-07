@@ -10,8 +10,8 @@ $query = new WP_Query(array(
     'tax_query' => array(
         array(
             'taxonomy' => 'production',
-            'field'    => 'slug',
-            'terms'    => ['in-development'],
+            'field'    => 'id',
+            'terms'    => ['11'],
             'operator' => 'IN',
         ),
     ),

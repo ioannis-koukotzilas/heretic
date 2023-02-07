@@ -389,7 +389,7 @@ textarea {
   bottom: 0;
   right: 0;
   width: 100%;
-  background-color: rgb(var(--bg-light));
+  background-color: rgb(var(--bg-white));
   visibility: hidden;
   opacity: 0;
   transform: translateY(12.5rem);
@@ -405,22 +405,28 @@ textarea {
 .espa-modal .container {
   max-width: var(--max-w-xl);
   margin: 0 auto;
-  padding: 0.75rem 1.75rem 0.75rem 0.75rem;
+  padding: 0.75rem 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .espa-modal .espa-modal-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: rgba(var(--color-dark), 1);
-  color: rgba(var(--color-light), 1);
   cursor: pointer;
+  padding: 0.25rem;
+  border: 2px solid;
+  font-size: var(--font-3xl);
 }
 
 .espa-modal .espa-banner {
   width: 100%;
   max-width: 375px;
   mix-blend-mode: multiply;
+}
+
+.espa-modal-toggle {
+  cursor: pointer;
 }
 
 /* Title Wrap
@@ -538,4 +544,5 @@ img.perfmatters-lazy.pmloaded {
   display: inline-block;
   line-height: 1;
   vertical-align: text-top;
+  margin-left: 0.1rem;
 }

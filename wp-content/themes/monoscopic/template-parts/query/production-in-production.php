@@ -10,8 +10,8 @@ $query = new WP_Query(array(
     'tax_query' => array(
         array(
             'taxonomy' => 'production',
-            'field'    => 'slug',
-            'terms'    => ['in-production'],
+            'field'    => 'id',
+            'terms'    => ['12'],
             'operator' => 'IN',
         ),
     ),
@@ -23,7 +23,7 @@ $query = new WP_Query(array(
     <section class="featured">
         <div class="container observe">
 
-            <?php $term = get_term_by('id', '10', 'production'); ?>
+            <?php $term = get_term_by('id', '12', 'production'); ?>
             <?php $term_link = get_term_link($term); ?>
 
             <div class="title-wrap observe">

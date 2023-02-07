@@ -73,6 +73,7 @@
 
 .site-footer .newsletter form input[type='email'] {
   flex-grow: 1;
+  width: 100%;
   max-width: 320px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;

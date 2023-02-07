@@ -152,13 +152,45 @@
   padding-top: 1.5rem;
 }
 
+/* Collaborations
+--------------------------------------------- */
+
+.home > .collaborations {
+  background-color: rgb(var(--bg-light));
+}
+
+.home > .collaborations .container {
+  max-width: var(--max-w-xl);
+  margin: 0 auto;
+  padding: 1.5rem 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.5rem;
+  row-gap: 1.5rem;
+}
+
+.home > .collaborations img {
+  max-height: 6rem;
+  max-width: 6rem;
+  mix-blend-mode: multiply;
+}
+
+@media (min-width: 720px) {
+  .home > .collaborations img {
+    max-height: 7.5rem;
+    max-width: 7.5rem;
+  }
+}
+
 /* Popular Now
 --------------------------------------------- */
 
 .home > .popular-now .container {
   max-width: var(--max-w-xl);
   margin: 0 auto;
-  padding: 0 20px 4.5rem;
+  padding: 4.5rem 20px;
 }
 
 .home > .popular-now .title {

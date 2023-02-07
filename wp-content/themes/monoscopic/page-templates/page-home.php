@@ -48,21 +48,29 @@ Template Post Type: page
 
 		<section class="seo">
 			<div class="container">
-				
 				<h1 class="title observe"><?php esc_html_e('Heretic is a boutique film house producing and selling films on a global scale.', 'monoscopic'); ?></h1>
-				
 				<div class="content observe">
 					<?php the_content(); ?>
 				</div>
 			</div>
 		</section>
 
+		<!-- TODO: Add alt -->
+
+		<section class="collaborations">
+			<div class="container observe">
+				<figure><img src="<?php echo get_template_directory_uri(); ?>/src/img/logo_efa.png" alt="" /></figure>
+				<figure><img src="<?php echo get_template_directory_uri(); ?>/src/img/logo_ace.png" alt="" /></figure>
+				<figure><img src="<?php echo get_template_directory_uri(); ?>/src/img/logo_eave.png" alt="" /></figure>
+				<figure><img src="<?php echo get_template_directory_uri(); ?>/src/img/logo_inside_pictures.png" alt="" /></figure>
+				<figure><img src="<?php echo get_template_directory_uri(); ?>/src/img/logo_hfa.png" alt="" /></figure>	
+			</div>
+		</section>
+
 		<?php if (have_rows('poster')) : ?>
 			<section class="popular-now">
 				<div class="container">
-					
 					<h3 class="title observe"><?php esc_html_e('Popular now', 'monoscopic'); ?></h3>
-					
 					<div class="swiper observe">
 						<ul class="swiper-wrapper">
 							<?php while (have_rows('poster')) : the_row(); ?>
@@ -106,34 +114,20 @@ Template Post Type: page
 		?>
 
 		<?php if ($query->have_posts()) : ?>
-
 			<section class="news">
-
 				<div class="container">
-
 					<?php $term = get_term_by('id', '1', 'category'); ?>
 					<?php $term_link = get_term_link($term); ?>
-
 					<div class="title-wrap observe">
-
-						<h3 class="title">
-							<?php esc_html_e('News', 'monoscopic'); ?>
-						</h3>
-
-						<a href="<?php echo esc_url($term_link); ?>" rel="bookmark" class="cta underline">
-							<?php esc_html_e('View all', 'monoscopic'); ?>
-						</a>
-
+						<h3 class="title"><?php esc_html_e('News', 'monoscopic'); ?></h3>
+						<a href="<?php echo esc_url($term_link); ?>" rel="bookmark" class="cta underline"><?php esc_html_e('View all', 'monoscopic'); ?></a>
 					</div>
-
 					<ul class="posts">
 						<?php while ($query->have_posts()) : $query->the_post(); ?>
 							<li class="post observe">
 								<a href="<?php the_permalink(); ?>" rel="bookmark">
 									<?php if (has_post_thumbnail()) : ?>
-										<figure class="featured-image">
-											<?php the_post_thumbnail('large')  ?>
-										</figure>
+										<figure class="featured-image"><?php the_post_thumbnail('large')  ?></figure>
 									<?php endif; ?>
 									<?php monoscopic_publish_date(); ?>
 									<?php the_title('<h3 class="title">', '</h3>'); ?>
@@ -141,7 +135,6 @@ Template Post Type: page
 							</li>
 						<?php endwhile; ?>
 					</ul>
-
 				</div>
 			</section>
 

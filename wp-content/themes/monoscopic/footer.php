@@ -110,9 +110,10 @@
 
 <div class="cc">
 	<div class="container">
-		<div>Copyright © <?php echo date('Y'); ?> Heretic. <a href="#"><?php esc_html_e('Privacy and Cookie Notice', 'monoscopic'); ?></a></div>
+		<div>Copyright © <?php echo date('Y'); ?> Heretic. By using this site you accept our terms of use, including our use of cookies. Please see our <a href="#" class="underline"><?php esc_html_e('privacy policy', 'monoscopic'); ?></a>.</div>
+		<div class="espa-modal-toggle underline">EPAnEK 2014-2020</div>
 		<div>Visual Communication & Web Development - MONOSCOPIC</div>
-		<div class="espa-modal-toggle">EPAnEK 2014-2020</div>
+		
 	</div>
 </div>
 

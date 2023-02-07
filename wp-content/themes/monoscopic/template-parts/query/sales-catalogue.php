@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Featured Production Completed
+ * Featured Sales Line Up
  */
 
 $query = new WP_Query(array(
@@ -9,9 +9,9 @@ $query = new WP_Query(array(
     'posts_per_page' => 8,
     'tax_query' => array(
         array(
-            'taxonomy' => 'production',
+            'taxonomy' => 'sales',
             'field'    => 'id',
-            'terms'    => ['10'],
+            'terms'    => ['16'],
             'operator' => 'IN',
         ),
     ),
@@ -23,13 +23,13 @@ $query = new WP_Query(array(
     <section class="featured">
         <div class="container observe">
 
-            <?php $term = get_term_by('id', '10', 'production'); ?>
+            <?php $term = get_term_by('id', '16', 'sales'); ?>
             <?php $term_link = get_term_link($term); ?>
 
             <div class="title-wrap observe">
 
                 <h3 class="title">
-                    <?php esc_html_e('Completed', 'monoscopic'); ?>
+                    <?php esc_html_e('Catalogue', 'monoscopic'); ?>
                 </h3>
 
                 <a href="<?php echo esc_url($term_link); ?>" rel="bookmark" class="cta underline">
