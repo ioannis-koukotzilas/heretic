@@ -7,6 +7,7 @@
 
 .film-single {
   background-color: rgb(var(--bg-white));
+  padding-bottom: 1.5rem;
 }
 
 .film-single > .header .container {
@@ -208,7 +209,8 @@
 --------------------------------------------- */
 
 .film-single > .details {
-  background: rgb(var(--bg-light));
+  background: rgb(var(--bg-dark));
+  color: rgb(var(--color-light));
 }
 
 .film-single > .details > .container {
@@ -279,6 +281,7 @@
 
 .archive-film {
   background-color: rgb(var(--bg-white));
+  padding-bottom: 1.5rem;
 }
 .archive-film > .header .container {
   max-width: var(--max-w-lg);
@@ -325,31 +328,26 @@
 
 .films > .film a {
   display: block;
-  background-color: rgb(var(--bg-dark));
 }
 
 .films > .film img {
   object-fit: cover;
   width: 100%;
   aspect-ratio: 16 / 9;
-  opacity: 0.75;
+  background-color: rgb(var(--bg-dark));
 }
 
-.films > .film a:visited img {
-  opacity: 0.75;
-}
-
-.films > .film a:hover img,
-.films > .film a:focus img,
-.films > .film a:active img {
-  opacity: 1;
-}
-
-.films > .film .title {
+.films > .film .content {
   position: absolute;
   bottom: 0;
   left: 0;
-  margin: 20px;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.films > .film .title {
+  margin: 0;
+  padding: 4.5rem 20px 1.5rem;
   text-transform: uppercase;
   font-size: var(--font-lg);
   line-height: var(--leading-none);

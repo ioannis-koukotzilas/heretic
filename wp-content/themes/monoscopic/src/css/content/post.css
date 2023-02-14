@@ -7,6 +7,7 @@
 
 .post-single {
   background-color: rgb(var(--bg-white));
+  padding-bottom: 1.5rem;
 }
 
 .post-single > .header .container {
@@ -156,25 +157,11 @@
   display: block;
 }
 
-.posts > .post figure {
-  background-color: rgb(var(--bg-dark));
-}
-
 .posts > .post img {
   object-fit: cover;
   width: 100%;
   aspect-ratio: 16 / 9;
-  opacity: 0.75;
-}
-
-.posts > .post a:visited img {
-  opacity: 0.75;
-}
-
-.posts > .post a:hover img,
-.posts > .post a:focus img,
-.posts > .post a:active img {
-  opacity: 1;
+  background-color: rgb(var(--bg-dark));
 }
 
 .posts > .post time {

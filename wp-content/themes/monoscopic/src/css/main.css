@@ -376,6 +376,10 @@ textarea {
   font-size: var(--font-3xl);
 }
 
+.symbol-menu::after {
+  content: '\e5d2';
+}
+
 .symbol-close::after {
   content: '\e5cd';
 }
@@ -518,14 +522,12 @@ textarea {
 --------------------------------------------- */
 
 img.perfmatters-lazy {
-  background: url('../svg/sync_black_24dp.svg') no-repeat 50% 50%;
+  background: url('../svg/loading.svg') no-repeat 50% 50%;
 }
 
 img.perfmatters-lazy.pmloaded {
   background: none;
 }
-
-
 
 /* Accesibility
 --------------------------------------------- */

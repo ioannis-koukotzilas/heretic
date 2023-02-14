@@ -3,13 +3,35 @@
 --------------------------------------------------------------*/
 
 .site-footer {
-  background-color: rgb(var(--bg-white));
-  border-top: 1px solid rgba(var(--bg-dark), 0.15);
+  background-color: rgb(var(--bg-dark));
+  color: rgb(var(--color-light));
+}
+
+.site-footer a,
+.site-footer a:visited {
+  color: rgba(var(--color-light), 1);
+}
+
+.site-footer a:hover,
+.site-footer a:focus,
+.site-footer a:active {
+  color: rgba(var(--color-light), 0.75);
 }
 
 .site-footer .site-title {
   display: inline-block;
   margin-bottom: 3rem;
+}
+
+.site-footer .site-title .trademark svg,
+.site-footer .site-title a:visited .trademark svg {
+  fill: rgba(var(--color-light), 1);
+}
+
+.site-footer .site-title a:hover .trademark svg,
+.site-footer .site-title a:focus .trademark svg,
+.site-footer .site-title a:active .trademark svg {
+  fill: rgba(var(--color-light), 0.75);
 }
 
 .site-footer > .container {
@@ -83,6 +105,8 @@
 .newsletter form input[type='submit'] {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  background-color: rgba(var(--bg-light), 0.5);
+  border-color: rgba(var(--bg-light), 0.5);
 }
 
 /* Social Networks
@@ -98,7 +122,7 @@
 }
 
 .site-footer .social-networks a {
-  background-color: rgba(var(--bg-dark), 0.15);
+  background-color: rgba(var(--bg-light), 0.15);
   padding: 0.5rem;
   border-radius: 50%;
   display: flex;
@@ -110,7 +134,7 @@
   display: block;
   width: var(--font-base);
   height: var(--font-base);
-  fill: rgba(var(--color-dark), 1);
+  fill: rgba(var(--color-light), 1);
 }
 
 /* Navigations
@@ -132,7 +156,7 @@
 --------------------------------------------- */
 
 .cc {
-  background-color: rgb(var(--bg-light));
+  background-color: rgba(var(--bg-light), 1);
   font-size: var(--font-xs);
 }
 

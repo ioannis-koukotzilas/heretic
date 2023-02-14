@@ -1,12 +1,14 @@
 <?php get_header(); ?>
 
-<main class="site-main page">
+<main class="site-main">
 
-	<?php while (have_posts()) : the_post(); ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<?php get_template_part('template-parts/content-page');  ?>
+		<?php get_template_part('template-parts/page/page-header');  ?>
 
-	<?php endwhile; ?>
+		<?php get_template_part('template-parts/page/page-content');  ?>
+
+	</article>
 
 </main>
 

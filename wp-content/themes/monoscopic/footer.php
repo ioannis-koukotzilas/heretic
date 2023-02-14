@@ -1,3 +1,10 @@
+<?php $completed = get_term_by('id', '10', 'production'); ?>
+<?php $in_production = get_term_by('id', '12', 'production'); ?>
+<?php $in_development = get_term_by('id', '11', 'production'); ?>
+<?php $line_up = get_term_by('id', '15', 'sales'); ?>
+<?php $catalogue = get_term_by('id', '16', 'sales'); ?>
+<?php $news = get_term_by('id', '1', 'category'); ?>
+
 <footer class="site-footer">
 
 	<div class="container">
@@ -9,16 +16,12 @@
 						<path fill-rule="nonzero" d="M16.685 0 .047 62.803l17.182-4.078L1.762 100l45.899-64.441-26.003 4.043L45.252 0H16.685" />
 					</svg>
 				</span>
-				<span class="logo">
-					<?php bloginfo('name'); ?>
-				</span>
+				<span class="logo"><?php bloginfo('name'); ?></span>
 			</a>
 		</h1>
 
 		<div class="grid">
-
 			<div class="grid-col">
-
 				<div class="newsletter">
 					<h5><?php esc_html_e('Newsletter', 'monoscopic'); ?></h5>
 					<form action="https://heretic.us14.list-manage.com/subscribe/post?u=d46408426d834a92313b562f2&amp;id=d857ad6a3a&amp;f_id=009990e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self">
@@ -26,7 +29,6 @@
 						<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
 					</form>
 				</div>
-
 				<nav class="social-networks">
 					<h5><?php esc_html_e('Social Networks', 'monoscopic'); ?></h5>
 					<ul>
@@ -64,62 +66,85 @@
 						</li>
 					</ul>
 				</nav>
-
 			</div>
 
-
 			<div class="grid-col">
-
 				<nav class="production">
-					<h5><?php esc_html_e('Production', 'monoscopic'); ?></h5>
+					<h5><a href="<?php echo get_permalink(77); ?>"><?php esc_html_e('Production', 'textdomain') ?></a></h5>
 					<ul class="menu">
-						<li><a href="#" title="<?php esc_html_e('Completed', 'monoscopic'); ?>"><?php esc_html_e('Completed', 'monoscopic'); ?></a></li>
-						<li><a href="#" title="<?php esc_html_e('In Production', 'monoscopic'); ?>"><?php esc_html_e('In Production', 'monoscopic'); ?></a></li>
-						<li><a href="#" title="<?php esc_html_e('In Development', 'monoscopic'); ?>"><?php esc_html_e('In Development', 'monoscopic'); ?></a></li>
+						<li><a href="<?php echo esc_url(get_term_link($completed)); ?>"><?php esc_html_e('Completed', 'monoscopic'); ?></a></li>
+						<li><a href="<?php echo esc_url(get_term_link($in_production)); ?>"><?php esc_html_e('In Production', 'monoscopic'); ?></a></li>
+						<li><a href="<?php echo esc_url(get_term_link($in_development)); ?>"><?php esc_html_e('In Development', 'monoscopic'); ?></a></li>
 					</ul>
 				</nav>
-
 				<nav class="sales">
-					<h5><?php esc_html_e('Sales', 'monoscopic'); ?></h5>
+					<h5><a href="<?php echo get_permalink(76); ?>"><?php esc_html_e('Sales', 'textdomain') ?></a></h5>
 					<ul class="menu">
-						<li><a href="#" title="<?php esc_html_e('Line Up', 'monoscopic'); ?>"><?php esc_html_e('Line Up', 'monoscopic'); ?></a></li>
-						<li><a href="#" title="<?php esc_html_e('Catalogue', 'monoscopic'); ?>"><?php esc_html_e('Catalogue', 'monoscopic'); ?></a></li>
+						<li><a href="<?php echo esc_url(get_term_link($line_up)); ?>"><?php esc_html_e('Line Up', 'monoscopic'); ?></a></li>
+						<li><a href="<?php echo esc_url(get_term_link($catalogue)); ?>"><?php esc_html_e('Catalogue', 'monoscopic'); ?></a></li>
 					</ul>
 				</nav>
-
 			</div>
-
 			<div class="grid-col">
-
 				<nav class="contact">
 					<h5><?php esc_html_e('Contact', 'monoscopic'); ?></h5>
 					<ul class="menu">
-						<li><a href="http://" title="<?php esc_html_e('Open in Google Maps', 'monoscopic'); ?>" target="_blank" rel="noopener noreferrer">36, Alkmanos street, 11 528, Athens, Greece</a></li>
-						<li><a href="mailto:info@heretic.gr" title="<?php esc_html_e('Send E-mail', 'monoscopic'); ?>">info@heretic.gr</a></li>
-						<li><a href="tel:+302106005260" title="<?php esc_html_e('Call', 'monoscopic'); ?>">+30 21 0600 5260</a></li>
+						<li><a href="https://goo.gl/maps/whnYvabGGiMxAn1N7" target="_blank" rel="noopener noreferrer"><?php esc_html_e('36, Alkmanos street, 11 528, Athens, Greece', 'monoscopic'); ?></a></li>
+						<li><a href="mailto:info@heretic.gr">info@heretic.gr</a></li>
+						<li><a href="tel:+302106005260">+30 21 0600 5260</a></li>
 					</ul>
 				</nav>
-
 			</div>
-
 		</div>
-
 	</div>
-
 </footer>
 
 <div class="cc">
 	<div class="container">
-		<div>Copyright © <?php echo date('Y'); ?> Heretic. By using this site you accept our terms of use, including our use of cookies. Please see our <a href="#" class="underline"><?php esc_html_e('privacy policy', 'monoscopic'); ?></a>.</div>
+		<div>Copyright © <?php echo date('Y'); ?> Heretic. <?php esc_html_e('By using this site you accept our terms of use, including our use of cookies. Please see our', 'monoscopic'); ?> <a href="<?php echo get_permalink(3); ?>" class="underline"><?php esc_html_e('privacy policy', 'textdomain') ?></a>.</div>
+		<div>Visual Communication & Web Development - <a href="https://monoscopic.net" class="underline" target="_blank" rel="noopener noreferrer">MONOSCOPIC</a></div>
 		<div class="espa-modal-toggle underline">EPAnEK 2014-2020</div>
-		<div>Visual Communication & Web Development - MONOSCOPIC</div>
-		
 	</div>
 </div>
 
+<aside id="mobile-nav" class="mobile-nav">
+	<div class="container">
+
+		<nav class="news">
+			<h5><a href="<?php echo esc_url(get_term_link($news)); ?>"><?php esc_html_e('News', 'monoscopic'); ?></a></h5>
+		</nav>
+
+		<nav class="production">
+			<h5><a href="<?php echo get_permalink(77); ?>"><?php esc_html_e('Production', 'textdomain') ?></a></h5>
+			<ul class="menu">
+				<li><a href="<?php echo esc_url(get_term_link($completed)); ?>"><?php esc_html_e('Completed', 'monoscopic'); ?></a></li>
+				<li><a href="<?php echo esc_url(get_term_link($in_production)); ?>"><?php esc_html_e('In Production', 'monoscopic'); ?></a></li>
+				<li><a href="<?php echo esc_url(get_term_link($in_development)); ?>"><?php esc_html_e('In Development', 'monoscopic'); ?></a></li>
+			</ul>
+		</nav>
+
+		<nav class="sales">
+			<h5><a href="<?php echo get_permalink(76); ?>"><?php esc_html_e('Sales', 'textdomain') ?></a></h5>
+			<ul class="menu">
+				<li><a href="<?php echo esc_url(get_term_link($line_up)); ?>"><?php esc_html_e('Line Up', 'monoscopic'); ?></a></li>
+				<li><a href="<?php echo esc_url(get_term_link($catalogue)); ?>"><?php esc_html_e('Catalogue', 'monoscopic'); ?></a></li>
+			</ul>
+		</nav>
+
+		<nav class="about">
+			<h5><a href="<?php echo get_permalink(75); ?>"><?php esc_html_e('About', 'textdomain') ?></a></h5>
+		</nav>
+
+		<div id="btn-mobile-nav-close"><span class="symbol symbol-close symbol-xl"></span></div>
+
+	</div>
+</aside>
+
 <div class="espa-modal">
 	<div class="container">
-		<img class="espa-banner" src="<?php echo get_template_directory_uri(); ?>/src/img/espa-banner.jpg" alt="Espa Banner" />
+		<a href="<?php echo get_template_directory_uri(); ?>/src/pdf/MME_EN.pdf" target="_blank" rel="noopener noreferrer">
+			<img class="espa-banner" src="<?php echo get_template_directory_uri(); ?>/src/img/espa-banner.jpg" alt="Espa Banner" />
+		</a>
 		<span class="espa-modal-close symbol symbol-close symbol-2xl"></span>
 	</div>
 </div>

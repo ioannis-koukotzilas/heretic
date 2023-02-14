@@ -41,17 +41,19 @@ Template Post Type: page
 								<?php endif; ?>
 							<?php endwhile; ?>
 						</ul>
+						<div class="swiper-navigation">
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
 					</div>
 				</div>
 			</section>
 		<?php endif; ?>
 
 		<section class="seo">
-			<div class="container">
-				<h1 class="title observe"><?php esc_html_e('Heretic is a boutique film house producing and selling films on a global scale.', 'monoscopic'); ?></h1>
-				<div class="content observe">
-					<?php the_content(); ?>
-				</div>
+			<div class="container observe">
+				<h1 class="title"><?php esc_html_e('Heretic is a boutique film house producing and selling films on a global scale', 'monoscopic'); ?></h1>
+				<a href="<?php echo get_permalink(75); ?>" class="cta underline"><?php esc_html_e('Read more', 'monoscopic'); ?></a>
 			</div>
 		</section>
 
@@ -63,14 +65,14 @@ Template Post Type: page
 				<figure><img src="<?php echo get_template_directory_uri(); ?>/src/img/logo_ace.png" alt="" /></figure>
 				<figure><img src="<?php echo get_template_directory_uri(); ?>/src/img/logo_eave.png" alt="" /></figure>
 				<figure><img src="<?php echo get_template_directory_uri(); ?>/src/img/logo_inside_pictures.png" alt="" /></figure>
-				<figure><img src="<?php echo get_template_directory_uri(); ?>/src/img/logo_hfa.png" alt="" /></figure>	
+				<figure><img src="<?php echo get_template_directory_uri(); ?>/src/img/logo_hfa.png" alt="" /></figure>
 			</div>
 		</section>
 
 		<?php if (have_rows('poster')) : ?>
 			<section class="popular-now">
 				<div class="container">
-					<h3 class="title observe"><?php esc_html_e('Popular now', 'monoscopic'); ?></h3>
+					<h3 class="title observe"><?php esc_html_e('Trending now', 'monoscopic'); ?></h3>
 					<div class="swiper observe">
 						<ul class="swiper-wrapper">
 							<?php while (have_rows('poster')) : the_row(); ?>
@@ -89,6 +91,10 @@ Template Post Type: page
 								<?php endif; ?>
 							<?php endwhile; ?>
 						</ul>
+						<div class="swiper-navigation">
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
 					</div>
 				</div>
 			</section>

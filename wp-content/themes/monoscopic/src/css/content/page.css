@@ -4,6 +4,7 @@
 
 .page {
   background-color: rgb(var(--bg-white));
+  padding-bottom: 1.5rem;
 }
 
 .page > .header .container {
@@ -15,6 +16,7 @@
 .page > .header .title {
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 .page > .content .container {
@@ -134,15 +136,8 @@
   padding: 4.5rem 20px 3rem;
 }
 
-@media (min-width: 720px) {
-  .home > .seo .container {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 3rem;
-  }
-}
-
 .home > .seo h1 {
+  max-width: var(--max-w-sm);
   font-size: var(--font-3xl);
   text-transform: uppercase;
   margin-top: 1.5rem;
@@ -156,7 +151,7 @@
 --------------------------------------------- */
 
 .home > .collaborations {
-  background-color: rgb(var(--bg-light));
+  background-color: rgba(var(--bg-dark), 0.025);
 }
 
 .home > .collaborations .container {
@@ -165,10 +160,15 @@
   padding: 1.5rem 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   column-gap: 2.5rem;
   row-gap: 1.5rem;
+}
+
+@media (max-width: 919px) {
+  .home > .collaborations .container {
+    justify-content: center;
+  }
 }
 
 .home > .collaborations img {
@@ -207,38 +207,29 @@
 .home > .popular-now figure img {
   object-fit: cover;
   aspect-ratio: 29.7 / 42;
+  background-color: rgb(var(--bg-dark));
 }
 
 .home > .popular-now a {
   display: block;
 }
 
-.home > .popular-now a figure {
-  border: 2px solid rgba(var(--color-dark), 0);
-}
-
-.home > .popular-now a:hover figure,
-.home > .popular-now a:focus figure,
-.home > .popular-now a:active figure {
-  border: 2px solid rgba(var(--color-dark), 0.5);
-}
-
 /* News
 --------------------------------------------- */
 
-.home > .news .container {
+.news .container {
   max-width: var(--max-w-xl);
   margin: 0 auto;
   padding: 0 20px 4.5rem;
 }
 
-.home > .news .posts {
+.news .posts {
   display: grid;
   row-gap: 3rem;
 }
 
 @media (min-width: 720px) {
-  .home > .news .posts {
+  .news .posts {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 1.5rem;
   }

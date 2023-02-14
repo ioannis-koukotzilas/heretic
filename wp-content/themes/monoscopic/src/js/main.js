@@ -3,7 +3,6 @@ Intersection Observer
 */
 
 (function () {
-  const observerRoot = document.querySelector('.amenities');
   const observerElements = document.querySelectorAll('.observe');
 
   const callback = (entries) => {
@@ -64,7 +63,7 @@ Scroll Header
 
   const toggleHeader = function (direction, curScroll) {
     if (direction === 2 && curScroll > 275) {
-      //replace 75 with the height of your header in px
+      //replace 275 with the height of your header in px
 
       header.classList.add('hide');
       prevDirection = direction;
@@ -121,7 +120,7 @@ Featured Video
 })();
 
 /*
-Swiper Sliders
+Swiper
 */
 
 (function () {
@@ -130,23 +129,16 @@ Swiper Sliders
     preloadImages: false,
     lazy: false,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.spotlight .swiper-button-next',
+      prevEl: '.spotlight .swiper-button-prev',
     },
-    // freeMode: {
-    //   enabled: true,
-    // },
-    //allowTouchMove: false,
     autoplay: {
       delay: 7000,
     },
-    breakpoints: {
-      720: {
-        // slidesPerView: 2,
-      },
-    },
   });
+})();
 
+(function () {
   const postersSwiper = new Swiper('.popular-now .swiper', {
     watchSlidesVisibility: true,
     preloadImages: false,
@@ -154,17 +146,9 @@ Swiper Sliders
     slidesPerView: 2,
     spaceBetween: 10,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.popular-now .swiper-button-next',
+      prevEl: '.popular-now .swiper-button-prev',
     },
-    freeMode: {
-      enabled: true,
-    },
-    //allowTouchMove: false,
-    autoplay: {
-      delay: 2500,
-    },
-    loop: true,
     breakpoints: {
       540: {
         slidesPerView: 3,
@@ -180,18 +164,17 @@ Swiper Sliders
       },
     },
   });
+})();
 
+(function () {
   const filmsSwiper = new Swiper('.featured .swiper', {
     watchSlidesVisibility: true,
     preloadImages: false,
     lazy: false,
     spaceBetween: 24,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    freeMode: {
-      enabled: true,
+      nextEl: '.featured .swiper-button-next',
+      prevEl: '.featured .swiper-button-prev',
     },
     breakpoints: {
       960: {
@@ -293,10 +276,30 @@ Lightbox
     fsLightbox.props.disableLocalStorage = true;
     fsLightbox.props.exitFullscreenOnClose = false;
     fsLightbox.props.loadOnlyCurrentSource = true;
-
-    // fsLightbox.props.slideshowTime = 10000000;
-
-    // fsLightbox.props.UIFadeOutTime = 1000000;
-    // fsLightbox.props.slideDistance = 0.1;
   }
+})();
+
+/**
+ * Mobile Nav
+ */
+
+(function () {
+  const btnMobileNavToggle = document.getElementById('btn-mobile-nav-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  const btnMobileNavClose = document.getElementById('btn-mobile-nav-close');
+
+  btnMobileNavToggle.onclick = function () {
+    btnMobileNavToggle.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+  };
+
+  btnMobileNavClose.onclick = function () {
+    mobileNav.classList.remove('active');
+  };
+
+  document.addEventListener('click', function (event) {
+    if (event.target.closest('#btn-mobile-nav-toggle') || event.target.closest('#mobile-nav')) return;
+    btnMobileNavToggle.classList.remove('active');
+    mobileNav.classList.remove('active');
+  });
 })();

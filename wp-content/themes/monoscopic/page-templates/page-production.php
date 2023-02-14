@@ -7,7 +7,7 @@ Template Post Type: page
 
 <?php get_header(); ?>
 
-<main class="site-main page">
+<main class="site-main">
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 

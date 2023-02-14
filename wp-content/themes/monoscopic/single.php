@@ -60,6 +60,8 @@
 				</div>
 			<?php endif; ?>
 
+			<?php get_template_part('template-parts/query/related-news'); ?>
+
 		</article>
 
 	<?php endwhile; ?>
